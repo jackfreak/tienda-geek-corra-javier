@@ -1,21 +1,24 @@
-import logo from './logo.svg';
+import logoTiendaGeek from './logo-tienda-geek.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Bienvenidxs a <span className="visually-hidden">Tienda Geek</span></h1>
+
+        <img src={logoTiendaGeek} className="logo-tienda" alt="Logo Tienda Geek" />
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Comics, Manga, Anime, Action-Figures y todo lo que buscas.
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
+          href="#"
+          target="_self"
           rel="noopener noreferrer"
         >
-          Learn React
+          Ingresar
         </a>
       </header>
     </div>
