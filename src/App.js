@@ -1,26 +1,19 @@
-import logoTiendaGeek from './logo-tienda-geek.svg';
-import './App.css';
+import './App.scss';
+import heroBanner1 from './assets/images/heroBanner1.webp';
+import { NavBar } from './components/NavBar/NavBar';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Bienvenidxs a <span className="visually-hidden">Tienda Geek</span></h1>
+      <NavBar />
 
-        <img src={logoTiendaGeek} className="logo-tienda" alt="Logo Tienda Geek" />
-
-        <p>
-          Comics, Manga, Anime, Action-Figures y todo lo que buscas.
-        </p>
-        <a
-          className="App-link"
-          href="#"
-          target="_self"
-          rel="noopener noreferrer"
-        >
-          Ingresar
-        </a>
-      </header>
+      {
+      // Simulated Hero Banner
+      }
+      <Container>
+        <img className='img-fluid' src={heroBanner1} alt='Hero 1'/>
+      </Container>
     </div>
   );
 }
