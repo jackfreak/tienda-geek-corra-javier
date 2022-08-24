@@ -1,0 +1,21 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+.btn-cart-widget {
+    position: relative;
+    font-size: 1em;
+
+    //background-color: $gray-300; 
+
+    //color: #fff;
+    
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+
+

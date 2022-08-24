@@ -1,19 +1,37 @@
 import './App.scss';
-import heroBanner1 from './assets/images/heroBanner1.webp';
-import { NavBar } from './components/NavBar/NavBar';
-import { Container } from 'react-bootstrap';
+
+import { Header } from './components/Header/Header';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ProductCard } from './components/ProductCard/ProductCard';
+import { HeroBanner } from './components/HeroBanner/HeroBanner';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <Header />
 
-      {
-      // Simulated Hero Banner
-      }
-      <Container>
-        <img className='img-fluid' src={heroBanner1} alt='Hero 1'/>
-      </Container>
+      <HeroBanner />
+
+      <ItemListContainer>
+        <ProductCard 
+          id='1' 
+          name='PlayStation DualSense Wireless Controller - Midnight Black' 
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas egestas nibh, eu lacinia justo scelerisque a.'
+          image='./images/61O9tWR6WDS._AC_UY218_.jpg'
+        />
+
+        <ProductCard 
+          id='2'
+          name='Xbox Core Wireless Controller – Carbon Black'
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas egestas nibh, eu lacinia justo scelerisque a.'
+          image='./images/61z3GQgEPZL._AC_UY218_.jpg'/>
+
+        <ProductCard 
+          id='3'
+          name='Nintendo Switch Pro Controller' 
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas egestas nibh, eu lacinia justo scelerisque a.'
+          image='./images/61drpi3cYUL._AC_UY218_.jpg' />
+      </ItemListContainer>
     </div>
   );
 }

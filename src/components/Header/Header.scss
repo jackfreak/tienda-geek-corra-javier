@@ -1,0 +1,23 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+.main-header {
+    position: relative;
+
+    font-size: 1em;
+
+    background-color: $gray-300; //var(--claret);
+
+    color: #fff;
+    
+    /*
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    */
+    //font-size: calc(10px + 2vmin);
+}
+
+
+
