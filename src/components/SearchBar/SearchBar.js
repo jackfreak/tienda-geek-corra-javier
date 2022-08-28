@@ -23,8 +23,8 @@ const SearchBar = () => {
                             />
                             
                             <Button variant="outline-dark">
-                                <i class="bi bi-search"></i>
-                                <span class="visually-hidden">Buscar</span>
+                                <i className="bi bi-search"></i>
+                                <span className="visually-hidden">Buscar</span>
                             </Button>
                         </Form>
 
