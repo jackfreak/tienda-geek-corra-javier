@@ -1,0 +1,60 @@
+[
+    {
+        "id": 1,
+        "name": "ATTACK ON TITAN VOL. 22",
+        "description": "Tras la terrible batalla contra los titanes, en especial contra el Titán Bestia, el Escuadrón de Reconocimiento llega a la casa natal de Eren, pero el secreto que se oculta en el sótano no es en absoluto lo que se esperaban. ",
+        "image": "./images/products/aot_22_2da-edicion-cov1-2a57931a0d85aa83cd16203294556357-240-0.jpeg",
+        "price": 990.0,
+        "stock": 50
+    },
+
+    {
+        "id": 2,
+        "name": "DRAGON HEAD VOL. 1",
+        "description": "Lo que debió haber sido un tranquilo viaje escolar se vuelveuna pesadilla cuando un tren lleno de estudiantes descarrila dentro de un túnel.",
+        "image": "./images/products/dragon_head_1_sobrecubierta1-875f6b7efa3fd1c7ae16518570766742-240-0.jpeg",
+        "price": 1650.0,
+        "stock": 0
+    },
+
+
+    {
+        "id": 3,
+        "name": "SOUL EATER VOL. 11",
+        "description": "La aracnofobia ha tomado la ofensiva y extiende la locura de los Kishin por todo el mundo, amenazando a cualquiera que se interponga en su camino.",
+        "image": "./images/products/soul-eater-11-cover1-f53c77001ec13ca5b215950050715010-240-0.jpeg",
+        "price": 990.0,
+        "stock": 15
+    },
+
+
+    {
+        "id": 4,
+        "name": "AKIRA VOL. 3",
+        "description": "En un caótico Neo-Tokio recién emergido de las cenizas de la III Guerra Mundial, Kaneda, Tetsuo y compañía se ven envueltos en el misterio de Akira, un extraño ser que en realidad es un proyecto científco secreto que debería hacer evolucionar a la raza humana.",
+        "image": "./images/products/akiravol031-907f0143351a86975415905335560257-240-0.jpeg",
+        "price": 3410.0,
+        "stock": 10
+    },
+
+
+    {
+        "id": 5,
+        "name": "SANDMAN VOL. 1: PRELUDIOS Y NOCTURNOS",
+        "description": "Una de las novelas gráficas más populares y aclamadas por la crítica de todos los tiempos, la galardonada obra maestra de Neil Gaiman, SANDMAN, estableció el estándar para la fantasía lírica y madura en la era moderna de los cómics.",
+        "image": "./images/products/sandman_cov_arg1-fc03daafcf2730e73515948585770263-240-0.jpeg",
+        "price": 3040.0,
+        "stock": 6
+    },
+
+
+    {
+        "id": 6,
+        "name": "GHOST IN THE SHELL",
+        "description": "A mediados del siglo XXI, las personas dependen de implantes mecánicos y los robots reciben tejido humano como mejora. En este contexto, la mayor Motoko Kusanagi tiene la tarea de perseguir a los más peligrosos terroristas y cibercriminales, incluyendo a unos hackers capaces de explotar la interfaz humano/máquina y reprogramarlos para transformarlos en sus marionetas.",
+        "image": "./images/products/tgits011-742e94f43dadefac9b15905386616797-240-0.jpeg",
+        "price": 2640.0,
+        "stock": 3
+    }
+
+]

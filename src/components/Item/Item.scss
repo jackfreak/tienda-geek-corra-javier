@@ -3,7 +3,7 @@
 @import "~bootstrap/scss/mixins";
 
 
-.product-card {
+.product-item {
     position: relative;
     
     width: 100%;
@@ -16,7 +16,11 @@
 
     .product-image {
         width: auto;
-        height: 7em;
+        height: 12em;
+    }
+
+    .product-desc {
+        //height: 6em;
     }
 
     @include media-breakpoint-up(lg) {
