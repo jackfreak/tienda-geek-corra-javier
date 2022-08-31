@@ -19,7 +19,7 @@ const Item = ({id, name='', description='', image='', price=0, stock=0}) => {
                 <Card.Text className='product-proce'>$ {price}</Card.Text>
                 
                 <ItemCount 
-                    stock={stock} initial={0} 
+                    stock={stock} initial={1} 
                     itemData={ {id, name, description } }
                     addToCart={addToCart} />
             </Card.Body>

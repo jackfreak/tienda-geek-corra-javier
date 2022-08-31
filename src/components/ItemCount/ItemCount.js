@@ -10,7 +10,7 @@ const ItemCount = ({itemData, stock, initial=0, addToCart}) => {
 
 
     const handleDecrease = () => {
-        setCount(Math.max(0, count - 1) );
+        setCount(Math.max(1, count - 1) );
     };
 
 
@@ -60,7 +60,7 @@ const ItemCount = ({itemData, stock, initial=0, addToCart}) => {
                     <i className="bi bi-dash"></i>
                 </Button>
 
-                <span className="item-count input-group-text">{count}</span>
+                <span className="item-count input-group-text">{ (stock >=1) ? count : 0 }</span>
 
                 <Button className="item-increase-btn"
                     variants="secondary" 
@@ -68,8 +68,6 @@ const ItemCount = ({itemData, stock, initial=0, addToCart}) => {
                     <span className="visually-hidden">Agregar item</span>
                     <i className="bi bi-plus"></i>
                 </Button>
-
-                
 			</div>
 
             <Button variant="secondary" variants="dark" 

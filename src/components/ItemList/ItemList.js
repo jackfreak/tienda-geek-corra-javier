@@ -1,19 +1,19 @@
 import { Item } from "../Item/Item";
 import "./ItemList.scss";
 
-const ItemList = ({products = []}) => {
+const ItemList = ({items = []}) => {
     
     return (
         <div className='item-list'>
         { 
-            products.map( (prod) => {
-                return <Item key={prod.id}
-                    id={prod.id}
-                    name={prod.name}
-                    description={prod.description} 
-                    image={prod.image}
-                    stock={prod.stock}
-                    price={prod.price}
+            items.map( (item) => {
+                return <Item key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    description={item.description} 
+                    image={item.image}
+                    stock={item.stock}
+                    price={item.price}
                     />
             })
         }
