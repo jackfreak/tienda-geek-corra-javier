@@ -1,0 +1,68 @@
+/*
+|--------------------------------------------------------------------------
+| VARIABLES
+|--------------------------------------------------------------------------
+*/
+@use "./variables/variables" as vars;
+
+
+/*
+|--------------------------------------------------------------------------
+| MIXINS
+|--------------------------------------------------------------------------
+*/
+
+//@import "./mixins/mixins-button-styles";
+
+/*
+|--------------------------------------------------------------------------
+| VENDORS
+|--------------------------------------------------------------------------
+*/
+
+// IMPORTANT: To import CSS into a SCSS, OMIT THE EXTENSION!!!!
+
+
+/*
+|--------------------------------------------------------------------------
+| PARTIALS
+|--------------------------------------------------------------------------
+*/
+
+@import "./partials/fonts";
+@import "./partials/general-styles";
+@import "./partials/text-styles";
+//@import "./partials/button-styles";
+
+
+
+// https://neumorphism.io/
+.morph {
+    border-radius: vars.$border-radius;
+
+    background: var(--color-gray-normal);
+
+    $distance: 10px; // Should be an even number for better results
+    $blur: $distance * 2; // Should be the double of distance for better results but can be whatever you want
+    box-shadow: $distance $distance $blur var(--color-gray-darker),
+            ($distance * -1) ($distance * -1) $blur var(--color-gray-lighter);
+
+}
+
+// https: //shadows.brumm.af/
+// layer: 4, final transp: 0.15, hori and ver distance: 20px, blur strength: 40px, spread: 0
+.card-smooth-shadow {
+    //@extend .morph;
+    //border: none;
+
+    background: var(--color-white);
+
+    border-radius: vars.$border-radius;
+
+    box-shadow:
+        0.9px 0.9px 1.8px rgba(0, 0, 0, 0.075),
+        2.5px 2.5px 5px rgba(0, 0, 0, 0.093),
+        6px 6px 12.1px rgba(0, 0, 0, 0.106),
+        20px 20px 40px rgba(0, 0, 0, 0.15);
+
+}

@@ -1,0 +1,8 @@
+// ============================================================================
+// :: INTERNAL HELPER FUNCTIONS
+// ============================================================================
+
+// See https://stackoverflow.com/questions/7115959/adding-important-using-a-compass-mixin/63900053#63900053
+@function is-important($important){
+    @return #{if($important, '!important', '')};
+}

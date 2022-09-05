@@ -1,0 +1,203 @@
+@use '../mixins/mixins';
+@use '../variables/variables' as vars;
+
+
+// ============================================================================
+// :: LOCAL VARIABLES
+// ============================================================================
+
+
+// ============================================================================
+// :: GENERAL STYLE DEFINITIONS
+// ============================================================================
+
+:root {
+    --color-black: #{vars.$black};
+    --color-white: #{vars.$white};
+
+    --color-gray-darker: #{vars.$gray-darker};
+    --color-gray-normal: #{vars.$gray-normal};
+    --color-gray-lighter: #{vars.$gray-lighter};
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+
+html {
+    // See https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
+    scroll-behavior: smooth !important;
+
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior
+    // overscroll-behavior: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    //font-family: vars.$font-family-eina03;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+    font-size: 1rem;
+    font-weight: vars.$font-weight-regular;
+    line-height: vars.$line-height-1-3;
+
+    color: var(--color-black);
+    background-color: var(--color-white);
+
+
+    // https: //developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+br.mobile {
+    display: initial;
+
+    @media screen and (min-width:vars.$lg) {
+        display: none;
+    }
+}
+
+br.desktop {
+    display: none;
+
+    @media screen and (min-width:vars.$lg) {
+        display: initial;
+    }
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.interactive {
+    // Countracts any pointer-events:none in a parent.
+    pointer-events: auto !important;
+}
+
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+
+// Makes an svg responsive use the available space of the parent.
+svg {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    display: block; // Eliminates strange space below the element because it's inline by default
+}
+
+// Same but height takes priority
+.responsive-vertical {
+    svg {
+        display: block; // Eliminates strange space below the element because it's inline by default
+
+        width: auto;
+        height: 100%;
+
+        max-width: 100%;
+    }
+}
+
+
+/*
+To modify the color of svg paths and or strokes you can use:
+
+fill: currentColor;
+stroke: some color;
+
+or
+
+path {
+    fill: inherit;
+}
+*/
+
+
+main {
+    position: relative;
+    width: 100%;
+
+    font-size: 1em;
+}
+
+
+
+
+// ============================================================================
+// :: ACCESSIBILITY
+// ============================================================================
+
+/*
+*:focus {
+    outline: 2px dotted $white !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+}
+*/
+
+
+a {
+    color: vars.$white;
+
+    // :link represents an element that has not yet been visited
+    &:link, &:visited {
+        color: currentColor;
+    }
+
+    &:active, &:focus {
+        color: currentColor;
+    }
+
+    @include mixins.accessible-outline;
+
+    @media (hover: hover) {
+        &:hover {
+            color: vars.$white;
+        }
+    }
+}
+
+button {
+    @media screen and (min-width:vars.$lg) {
+        @include mixins.accessible-outline;
+    }
+}
+
+
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_Media_Queries_for_Accessibility
+@media (prefers-reduced-motion: reduce) {
+    html {
+        // See https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
+        scroll-behavior: auto !important;
+    }
+
+    // Disables Bootstrap collapse/expand animation
+    .collapsing {
+        transition: none !important;
+    }
+}

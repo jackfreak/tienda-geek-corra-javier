@@ -1,0 +1,36 @@
+@use 'sass:color';
+@use 'sass:string';
+
+
+// ============================================================================
+// :: HELPER FUNCTIONS
+// ============================================================================
+
+/**
+ * Converts an HEX color into a RGB list
+ */
+@function convertHexToRGB($color) {
+    $r: color.red($color);
+    $g: color.green($color);
+    $b: color.blue($color);
+
+    //@return rgba($r, $g, $b, $alpha);
+    @return #{$r}, #{$g}, #{$b};
+}
+
+
+
+/**
+ * Converts an HEX color into RGB with alpha
+ */
+@function convertHexToRGBA($color, $alpha: 1) {
+    $r: color.red($color);
+    $g: color.green($color);
+    $b: color.blue($color);
+
+    //@return rgba($r, $g, $b, $alpha);
+
+    // We do it this way because the above version converts the rgb back into hex when alpha = 1
+    @return string.unquote("rgba( #{$r}, #{$g}, #{$b}, #{$alpha} )");
+}
+

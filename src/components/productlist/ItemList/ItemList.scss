@@ -1,0 +1,41 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins.scss";
+
+.item-list {
+    position: relative;
+
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    */
+
+
+    .cell {
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        padding: .5em;
+    }
+
+    /*
+    @include media-breakpoint-up(lg) {
+        //min-width: min-content;
+
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    */
+}
+
+
+

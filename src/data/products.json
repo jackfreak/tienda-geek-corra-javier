@@ -4,10 +4,9 @@
         "name": "ATTACK ON TITAN VOL. 22",
         "description": "Tras la terrible batalla contra los titanes, en especial contra el Titán Bestia, el Escuadrón de Reconocimiento llega a la casa natal de Eren, pero el secreto que se oculta en el sótano no es en absoluto lo que se esperaban. ",
         "image": "./images/products/aot_22_2da-edicion-cov1-2a57931a0d85aa83cd16203294556357-240-0.jpeg",
-        "price": 990.0,
+        "price": 1500.0,
         "stock": 50
     },
-
     {
         "id": 2,
         "name": "DRAGON HEAD VOL. 1",
@@ -16,8 +15,6 @@
         "price": 1650.0,
         "stock": 0
     },
-
-
     {
         "id": 3,
         "name": "SOUL EATER VOL. 11",
@@ -26,8 +23,6 @@
         "price": 990.0,
         "stock": 15
     },
-
-
     {
         "id": 4,
         "name": "AKIRA VOL. 3",
@@ -36,8 +31,6 @@
         "price": 3410.0,
         "stock": 1
     },
-
-
     {
         "id": 5,
         "name": "SANDMAN VOL. 1: PRELUDIOS Y NOCTURNOS",
@@ -46,8 +39,6 @@
         "price": 3040.0,
         "stock": 6
     },
-
-
     {
         "id": 6,
         "name": "GHOST IN THE SHELL",
@@ -56,5 +47,4 @@
         "price": 2640.0,
         "stock": 3
     }
-
 ]

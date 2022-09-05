@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+
+.item-detail-container {
+    /*
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+    }
+    */
+
+    &__cell {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 12em;
+    }
+}

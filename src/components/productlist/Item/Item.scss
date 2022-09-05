@@ -1,0 +1,66 @@
+@use "/src/styles/variables/variables" as vars;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+
+.item {
+    position: relative;
+
+    width: 100%;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    /*
+    @media screen and (min-width: vars.$lg) {
+
+    }
+    */
+
+    &__header {
+
+    }
+
+
+    &__title {
+        font-size: 1.2em;
+        font-weight: vars.$font-weight-bold;
+
+        margin: 0;
+
+        color: vars.$black;
+
+        @media screen and (min-width:vars.$lg) {
+            font-size: 1.4em;
+        }
+    }
+
+    &__image {
+        width: auto;
+        height: 12em;
+
+        //border-radius: 20px;
+        //object-fit: cover;
+
+        @media screen and (min-width: vars.$lg) {
+            width: auto;
+            height: 14em;
+        }
+    }
+
+    &__price {
+        font-size: 1.2em;
+        font-weight: vars.$font-weight-semi-bold;
+
+        margin: .5em 0;
+    }
+
+    /*
+    &__more-btn {
+
+    }
+    */
+
+}

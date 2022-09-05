@@ -1,19 +1,21 @@
 import './App.scss';
 
-import { Header } from './components/Header/Header';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import { HeroBanner } from './components/HeroBanner/HeroBanner';
+import { Header } from './components/header/Header/Header';
+import { HeroBanner } from './components/home/HeroBanner/HeroBanner';
+import { ItemListContainer } from './components/productlist/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './components/productdetail/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
+    return (
+        <div className="App">
+            <Header />
 
-      <HeroBanner />
+            <HeroBanner />
 
-      <ItemListContainer />
-    </div>
-  );
+            <ItemListContainer />
+            <ItemDetailContainer />
+        </div>
+    );
 }
 
 export default App;

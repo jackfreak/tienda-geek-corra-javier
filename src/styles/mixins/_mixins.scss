@@ -1,0 +1,109 @@
+@use "sass:string";
+@use "../variables/variables" as vars;
+
+
+// ============================================================================
+// :: FUNCTIONS
+// ============================================================================
+
+
+
+// ============================================================================
+// :: TEXT STYLES
+// ============================================================================
+// These are defined in an external file. See: @forward "mixins-text-styles"
+
+
+// ============================================================================
+// :: SIZING
+// ============================================================================
+
+@mixin max-width() {
+    max-width: 960px; // https://getbootstrap.com/docs/4.0/layout/grid/
+}
+
+
+// ============================================================================
+// :: SPACING
+// ============================================================================
+
+
+
+
+// ============================================================================
+// :: DECORATIONS
+// ============================================================================
+
+
+// ============================================================================
+// :: MISC
+// ============================================================================
+
+@mixin reduce-motion-transform {
+    @media (prefers-reduced-motion: reduce) {
+        transform: none;
+        transition-property: none;
+    }
+}
+
+
+// ============================================================================
+// :: ACCESSIBILITY
+// ============================================================================
+
+@mixin accessible-outline {
+    &:focus {
+        outline: vars.$outline-width vars.$outline-style vars.$outline-color;
+        outline-offset: vars.$outline-offset;
+    }
+
+    &.inverted-focus:focus {
+        outline: vars.$outline-width vars.$outline-style vars.$outline-color-inverted;
+        outline-offset: vars.$outline-offset;
+    }
+
+    &:focus-visible {
+        position: relative;
+        //box-shadow: none;
+        z-index: 100; // Elevated the element so the outline doesn't get cut-out by other elements
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+        //box-shadow: none;
+    }
+}
+
+
+// ============================================================================
+// :: DEBUG
+// ============================================================================
+
+// Show a warning message if the debug mode is enabled in the top right corner of the viewport.
+//
+// How to use:
+// @include show-debug-mode;
+@mixin show-debug-mode() {
+    body:before {
+        $front-color: #ff0000;
+        $side-color: #240000;
+
+        background-color: #440000;
+
+        border-bottom: 1px solid $side-color;
+        border-left: 1px solid $side-color;
+        color: $front-color;
+
+        font: small-caption;
+        font-size: 12px;
+        padding: 3px 6px;
+        pointer-events: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 100;
+
+        //content: "#{$show-breakpoint} ≥ #{$width} (#{mq-px2em($width)})";
+        content: "DEBUG MODE: ENABLED";
+    }
+}

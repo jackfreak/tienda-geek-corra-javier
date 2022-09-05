@@ -1,35 +1,30 @@
+@use "./styles/variables/variables" as vars;
+
+
+// HERE WE DEFINE NEW BREAKPOINTS FOR BOOTSTRAP (before we import bootstrap config)
+$grid-breakpoints: (
+    xs: vars.$xs,
+    // NEW IN BS
+    xm: vars.$xm,
+    sm: vars.$sm,
+    md: vars.$md,
+    lg: vars.$lg,
+    xl: vars.$xl,
+    xxl: vars.$xxl,
+    // NEW IN BS
+    xxxl: vars.$xxxl,
+);
+
+//@import "./partials/bootstrap-config"; // Custom boostrap config
 @import "~bootstrap/scss/bootstrap";
+
+// TODO: Import only the one we need
 @import "~bootstrap-icons/font/bootstrap-icons";
+
+
 @import "./styles/main.scss";
 
 
-:root {
-  /* CSS HEX */
-  --cultured: #efefefff;
-  --claret: #710627ff;
-  --star-command-blue: #2176aeff;
-  --smoky-black: #090c02ff;
-  --ultra-red: #f7717dff;
-
-  /* CSS HSL */
-  /* --cultured: hsla(0, 0%, 94%, 1);
-  --claret: hsla(341, 90%, 23%, 1);
-  --star-command-blue: hsla(204, 68%, 41%, 1);
-  --smoky-black: hsla(78, 71%, 3%, 1);
-  --ultra-red: hsla(355, 89%, 71%, 1); */
-}
-
-body {
-  margin: 0;
-  padding: 0;
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .App {
-  position: relative;
+    position: relative;
 }
