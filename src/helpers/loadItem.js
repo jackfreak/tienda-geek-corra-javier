@@ -5,14 +5,14 @@ import productsJSONData from '../data/products.json';
  * @returns
  */
 const loadItem = (id) => {
-    console.warn('loadItem');
+    //console.warn('loadItem');
 
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            const itemData = productsJSONData.find(item => Number(item.id) === id);
+            const itemData = productsJSONData.find(item => item.id === Number(id));
 
             resolve(itemData);
-        }, 3000);
+        }, 2000);
     });
 };
 

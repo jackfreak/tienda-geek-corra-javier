@@ -5,7 +5,7 @@ import productsJSONData from '../data/products.json';
  * @returns
  */
 const loadItems = () => {
-    console.warn('loadItems');
+    //console.warn('loadItems');
 
     return new Promise( (resolve, reject) => {
         setTimeout(() => {

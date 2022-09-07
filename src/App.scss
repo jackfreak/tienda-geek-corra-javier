@@ -15,7 +15,7 @@ $grid-breakpoints: (
     xxxl: vars.$xxxl,
 );
 
-//@import "./partials/bootstrap-config"; // Custom boostrap config
+//@import "./partials/bootstrap-config"; // Custom bootstrap config
 @import "~bootstrap/scss/bootstrap";
 
 // TODO: Import only the one we need

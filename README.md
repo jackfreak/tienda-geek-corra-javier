@@ -1,9 +1,40 @@
 # Proyecto Final para el curso 'REACT JS' de Coderhouse
 
-El proyecto consiste en armar una aplicacion de E-commerce.
-Esta compuesto por un SPA (Single page application) para el frontend, y servicios y datos en FIREBASE para el backend.
+> **Autor:** Javier Alejandro Corra
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción del Proyecto
+
+El proyecto consiste en armar una aplicacion de E-commerce.
+Esta compuesto por un SPA (Single Page Application) para el frontend y servicios/datos modelados en FIREBASE para el backend.
+
+Este proyecto fue inicializado con [Create React App](https://github.com/facebook/create-react-app).
+
+## Temática
+
+![Tienda Geek](src/assets/images/logo-tienda-geek.jpg)
+
+La tematica elegida para el E-Commerce es el de una tienda de Comics, Manga y Accesorios bajo el nombre de fantasía **"Tienda Geek"**.
+
+## Enfoque
+
+Al ser mi primer proyecto en React quiero probar diferentes cosas y formas de escribir el código, por lo cual cada entrega tendra pequeñas diferencias donde iré explorando React y JSX.
+
+A pesar de que el CSS no se evaluará, para mi es super importante lo estético y espero poder probar uno o mas frameworks de CSS. Inicialmente se esta utilizando react-bootstrap porque es lo mas familiar y rápido. Cabe destacar que se esta implementando bootstrap de forma modular con SASS, acompañado de otros archivos SASS conteniendo partials, mixins y variables especificos del proyecto.
+
+También es de mi interés probar otros frameworks mas complejos como MUI o Chakra UI, dependiendo del tiempo que posea para investigarlos e implementarlos correctamente.
+
+Otro punto que me interesa es la Accesibilidad, y a medida que me vaya sintiendo mas cómodo con React y JSX ire mejorandolo.
+
+El orden, la prolijidad, la claridad del código y una documentación básica son elementos fundamentales en todo desarrollo escalable por lo que intentare (dentro de mis tiempos) de mantener esos standares altos para las entregas importantes.
+
+## Instalación
+
+Para instalar y correr el proyecto en modo desarollo se deberán ejecutar los siguientes comandos (en orden y en el root del proyecto):
+
+1. `npm install`
+2. `npm start`
+
+Para mas información a continuación se describen los otros comandos disponibles.
 
 ## Available Scripts
 

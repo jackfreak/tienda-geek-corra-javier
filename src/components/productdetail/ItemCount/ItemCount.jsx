@@ -37,22 +37,6 @@ const ItemCount = ({itemData, stock, initial=0, addToCart}) => {
     return (
         <div className="item-count">
 			<div className="item-count__quantity">
-                {
-                    /*
-				<label class="visually-hidden" for={ "quantity_" + itemData.id }>{itemData.name} - {itemData.description}</label>
-
-                <input type="number" id={ "quantity_" + itemData.id } className="input-text qty text"
-                step="1" min="1" max={stock}
-                name="quantity"
-                title="Cantidad" size="4" placeholder="" inputMode="numeric" autoComplete="off"
-                value={count}
-                onChange={handleChange}  />
-
-                <span className="item-count">{count}</span>
-                */
-                }
-
-
                 <Button className="item-count__decrease-btn"
                     variants="secondary"
                     onClick={handleDecrease}>
@@ -60,7 +44,7 @@ const ItemCount = ({itemData, stock, initial=0, addToCart}) => {
                     <i className="bi bi-dash"></i>
                 </Button>
 
-                <span className="item-count__input input-group-tex">{ (stock >=1) ? count : 0 }</span>
+                <span className="item-count__input input-group-text">{ (stock >=1) ? count : 0 }</span>
 
                 <Button className="item-count__increase-btn"
                     variants="secondary"

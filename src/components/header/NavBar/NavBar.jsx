@@ -1,3 +1,9 @@
+/**
+ * NavBar component.
+ *
+ * @author Javier Alejandro Corra
+ */
+
 import './NavBar.scss';
 import logoTiendaGeek from '../../../assets/images/logo-tienda-geek.svg';
 
@@ -7,29 +13,40 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { CartWidget } from '../CartWidget/CartWidget';
-
+import { NavLink, Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" className='main-nav-bar'>
             <Container>
                 <h1 className='visually-hidden'>Tienda Geek</h1>
-                <Navbar.Brand href="./" title='Tienda Geek'>
+
+                <Link to='/' title='Tienda Geek' className='navbar-brand'>
                     <img src={logoTiendaGeek} className="logo-tienda" alt="Logo Tienda Geek" />
-                </Navbar.Brand>
+                </Link>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto me-3" as="ul">
                         <Nav.Item as="li">
-                            <Nav.Link href="#home">Inicio</Nav.Link>
+                            <NavLink to='/category/comics' className='nav-link'>Comics</NavLink>
                         </Nav.Item>
+
                         <Nav.Item as="li">
-                            <Nav.Link href="#products">Productos</Nav.Link>
+                            <NavLink to='/category/manga' className='nav-link'>Manga</NavLink>
                         </Nav.Item>
+
                         <Nav.Item as="li">
-                            <Nav.Link href="#contact">Contacto</Nav.Link>
+                            <NavLink to='/category/figuras' className='nav-link'> Figuras</NavLink>
+                        </Nav.Item>
+
+                        <Nav.Item as="li">
+                            <NavLink to='/category/accesorios' className='nav-link'>Accesorios</NavLink>
+                        </Nav.Item>
+
+                        <Nav.Item as="li">
+                            <NavLink to='/contacto' className='nav-link'>Contacto</NavLink>
                         </Nav.Item>
 
                         <NavDropdown title="Mi Cuenta" menuVariant="light" as='li' id="nav-dropdown-my-account">
@@ -59,5 +76,5 @@ const NavBar = () => {
 
 
 export {
-    NavBar,
+    NavBar
 }

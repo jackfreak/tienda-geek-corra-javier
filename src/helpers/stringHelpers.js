@@ -84,7 +84,6 @@ function formatIntegerWith(n, symbol = ',') {
 // ::: API
 //------------------------------------------------------------------------------------------------------------------
 
-
 export {
     formatStringIntegerLocale,
     formatInteger,

@@ -9,10 +9,14 @@ import { useEffect, useState } from 'react';
 import { loadItem } from '../../../helpers/loadItem';
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { Container, Spinner } from 'react-bootstrap';
-
-
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
+
+    /**
+     * itemId
+     */
+    const { itemId } = useParams();
 
     /**
      * item state
@@ -26,19 +30,20 @@ const ItemDetailContainer = () => {
 
 
     useEffect(() => {
-        // We temporarily hardcode an id
-        loadItem(1)
+        setLoading(true);
+
+        loadItem(itemId)
         .then( (result) => {
-            console.log('itemData', result);
+            //console.log('itemData', result);
             setItem(result);
         })
         .catch( (err) => {
-            console.log(err);
+            console.error(err);
         })
         .finally(() => {
             setLoading(false);
         });
-    }, []);
+    }, [itemId]);
 
     return (
         <Container className='item-detail-container' as='section'>

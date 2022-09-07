@@ -1,0 +1,30 @@
+@use "/src/styles/variables/variables" as vars;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.breadcrumb-bar {
+
+    a {
+        color: vars.$black;
+
+        // :link represents an element that has not yet been visited
+        &:link,
+        &:visited {
+            color: currentColor;
+        }
+
+        &:active,
+        &:focus {
+            color: currentColor;
+        }
+
+        //@include mixins.accessible-outline;
+
+        @media (hover: hover) {
+            &:hover {
+                color: vars.$black;
+            }
+        }
+    }
+}
