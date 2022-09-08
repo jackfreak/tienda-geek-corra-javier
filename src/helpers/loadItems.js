@@ -1,3 +1,9 @@
+/**
+ * loadItems mock service module.
+ *
+ * @author Javier Alejandro Corra
+ */
+
 import productsJSONData from '../data/products.json';
 
 /**

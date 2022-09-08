@@ -13,7 +13,7 @@ Este proyecto fue inicializado con [Create React App](https://github.com/faceboo
 
 ![Tienda Geek](src/assets/images/logo-tienda-geek.jpg)
 
-La tematica elegida para el E-Commerce es el de una tienda de Comics, Manga y Accesorios bajo el nombre de fantasía **"Tienda Geek"**.
+La tematica elegida para el E-Commerce es el de una tienda de Comics, Manga, Figuras de Accion y Accesorios bajo el nombre de fantasía **"Tienda Geek"**.
 
 ## Enfoque
 
@@ -23,9 +23,14 @@ A pesar de que el CSS no se evaluará, para mi es super importante lo estético 
 
 También es de mi interés probar otros frameworks mas complejos como MUI o Chakra UI, dependiendo del tiempo que posea para investigarlos e implementarlos correctamente.
 
-Otro punto que me interesa es la Accesibilidad, y a medida que me vaya sintiendo mas cómodo con React y JSX ire mejorandolo.
+Otra área que me interesa es la Accesibilidad, y a medida que me vaya sintiendo mas cómodo con React y JSX ire mejorandola.
 
-El orden, la prolijidad, la claridad del código y una documentación básica son elementos fundamentales en todo desarrollo escalable por lo que intentare (dentro de mis tiempos) de mantener esos standares altos para las entregas importantes.
+El orden, la prolijidad, la claridad del código y una documentación son elementos fundamentales en todo desarrollo escalable por lo que intentare -dentro del tiempo qe disponga- de mantener esos standares para las entregas importantes.
+
+## Nuevas Dependencias
+
+-   [React Bootstrap](https://react-bootstrap.github.io/)
+-   [use-react-router-breadcrumbs](https://github.com/icd2k3/use-react-router-breadcrumbs)
 
 ## Instalación
 

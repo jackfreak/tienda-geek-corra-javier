@@ -1,5 +1,5 @@
 /**
- * stringHelpers Module
+ * stringHelpers module.
  * @author Javier Alejandro Corra
  */
 
@@ -70,6 +70,16 @@ function formatIntegerWith(n, symbol = ',') {
 }
 
 
+/**
+ *
+ * @param {*} str
+ * @returns
+ */
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+
 //------------------------------------------------------------------------------------------------------------------
 // ::: PRIVATE METHODS
 //------------------------------------------------------------------------------------------------------------------
@@ -88,4 +98,5 @@ export {
     formatStringIntegerLocale,
     formatInteger,
     formatIntegerWith,
+    capitalize,
 };
