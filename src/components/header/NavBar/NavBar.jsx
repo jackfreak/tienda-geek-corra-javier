@@ -46,7 +46,7 @@ const NavBar = () => {
                         </Nav.Item>
 
                         <Nav.Item as="li">
-                            <NavLink to='/contacto' className='nav-link'>Contacto</NavLink>
+                            <NavLink to='/contact' className='nav-link'>Contacto</NavLink>
                         </Nav.Item>
 
                         <NavDropdown title="Mi Cuenta" menuVariant="light" as='li' id="nav-dropdown-my-account">

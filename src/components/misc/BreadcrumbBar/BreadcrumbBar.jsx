@@ -39,17 +39,6 @@ const DynamicCategoryBreadcrumb = (data) => {
 };
 
 
-/*
-const CustomPropsBreadcrumb = ({ someProp }) => (
-    <span>{someProp}</span>
-);
-*/
-
-/*
-
-
-*/
-
 // Define custom breadcrumbs for certain routes.
 // Breadcumbs can be components or strings.
 const routes = [
@@ -68,7 +57,7 @@ const routes = [
         breadcrumb: DynamicCategoryBreadcrumb,
     },
 
-     {
+    {
         path: '/item',
         breadcrumb: null,
     },
@@ -77,7 +66,6 @@ const routes = [
         path: '/item/:itemId',
         breadcrumb: DynamicItemBreadcrumb,
     },
-    //{ path: '/custom-props', breadcrumb: CustomPropsBreadcrumb, props: { someProp: 'Hi' }},
 ];
 
 const BreadcrumbBar = () => {

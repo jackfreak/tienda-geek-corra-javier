@@ -15,6 +15,8 @@ import { ItemDetailContainer } from './components/productdetail/ItemDetailContai
 import { ContactContainer } from './components/contact/ContactContainer';
 import { Error404 } from './components/misc/Error404/Error404';
 import { BreadcrumbBar } from './components/misc/BreadcrumbBar/BreadcrumbBar';
+import { Footer } from './components/footer/Footer/Footer';
+import { CartContainer } from './components/checkout/CartContainer/CartContainer';
 
 
 function App() {
@@ -31,14 +33,19 @@ function App() {
 
                 <BreadcrumbBar />
 
-                <Routes>
-                    <Route path='/' element={ <ItemListContainer /> } />
-                    <Route path='/category/:categoryId' element={ <ItemListContainer /> } />
-                    <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+                <main>
+                    <Routes>
+                        <Route path='/' element={ <ItemListContainer /> } />
+                        <Route path='/category/:categoryId' element={ <ItemListContainer /> } />
+                        <Route path='/item/:itemId' element={<ItemDetailContainer />} />
 
-                    <Route path='/contacto' element={ <ContactContainer></ContactContainer> } />
-                    <Route path='*' element={ <Error404 /> } />
-                </Routes>
+                        <Route path='/contact' element={<ContactContainer></ContactContainer>} />
+                        <Route path='/cart' element={ <CartContainer></CartContainer> } />
+                        <Route path='*' element={ <Error404 /> } />
+                    </Routes>
+                </main>
+
+                <Footer />
             </div>
         </BrowserRouter>
     );

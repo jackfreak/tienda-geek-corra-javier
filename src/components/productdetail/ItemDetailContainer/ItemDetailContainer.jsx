@@ -13,19 +13,10 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
-    /**
-     * itemId
-     */
     const { itemId } = useParams();
 
-    /**
-     * item state
-     */
     const [item, setItem] = useState(undefined);
 
-    /**
-     * loading state
-     */
     const [loading, setLoading] = useState(true);
 
 

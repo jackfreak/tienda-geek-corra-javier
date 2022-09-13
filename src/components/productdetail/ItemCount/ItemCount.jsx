@@ -1,13 +1,16 @@
+/**
+ * ItemCount component.
+ *
+ * @author Javier Alejandro Corra
+ */
+
+
 import "./ItemCount.scss"
-import { useState } from "react";
 import { Button } from "react-bootstrap";
 
 
 
-const ItemCount = ({itemData, stock, initial=0, addToCart}) => {
-
-    const [count, setCount] = useState(initial);
-
+const ItemCount = ({stock, initial=0, count, setCount, onAddToCart}) => {
 
     const handleDecrease = () => {
         setCount(Math.max(1, count - 1) );
@@ -57,7 +60,7 @@ const ItemCount = ({itemData, stock, initial=0, addToCart}) => {
             <Button variant="secondary" variants="dark"
                 className="item-count__add-to-cart-btn"
                 disabled={(stock <= 0) || (count === 0) }
-                onClick={ () => addToCart(count) }>
+                onClick={ () => onAddToCart(count) }>
                 Añadir al carrito
             </Button>
 		</div>

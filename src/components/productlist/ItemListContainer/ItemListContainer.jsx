@@ -16,20 +16,10 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
     //console.log('ItemListContainer');
 
-    /**
-     * categoryId
-     */
     const { categoryId } = useParams();
-    //console.log(categoryId);
 
-    /**
-     * products state
-     */
     const [products, setProducts] = useState([]);
 
-    /**
-     * loading state
-     */
     const [loading, setLoading] = useState(true);
 
 
@@ -77,7 +67,6 @@ const ItemListContainer = () => {
     }, [categoryId]);
 
 
-    // Render
     return (
         <Container className='item-list-container' as='section'>
             <Row><Col><h2 className='item-list-container__title'>{ getTitle(categoryId) }</h2></Col></Row>
