@@ -32,7 +32,7 @@ const ItemListContainer = () => {
             return "Manga";
 
         } else if (categoryId === 'figuras') {
-            return "Action Figures";
+            return "Figuras";
 
         } else if (categoryId === 'accesorios') {
             return "Accesorios";

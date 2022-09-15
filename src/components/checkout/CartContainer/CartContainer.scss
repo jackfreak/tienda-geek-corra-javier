@@ -4,4 +4,18 @@
 @import "~bootstrap/scss/variables";
 
 
-.cart-container {}
+.cart-container {
+    position: relative;
+
+
+    &__item-list {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        gap: 1em;
+    }
+}

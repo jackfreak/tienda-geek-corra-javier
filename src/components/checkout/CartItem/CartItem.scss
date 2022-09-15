@@ -1,0 +1,136 @@
+@use "/src/styles/variables/variables" as vars;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+
+.cart-item {
+    position: relative;
+
+    width: 100%;
+
+    font-size: 1rem;
+
+    //text-align: center;
+
+    /*
+    @media screen and (min-width: vars.$lg) {
+
+    }
+    */
+
+
+    &__title {
+        font-size: 1em;
+        font-weight: vars.$font-weight-bold;
+
+        margin: 0;
+
+        color: vars.$black;
+
+        /*
+        @media screen and (min-width:vars.$lg) {
+            font-size: 1em;
+        }
+        */
+    }
+
+    &__image {
+        width: 5em;
+        height: 5em;
+
+        object-fit: contain;
+
+        @media screen and (min-width: vars.$lg) {
+            width: 6em;
+            height: 6em;
+        }
+    }
+
+    &__total-price {
+        font-size: 1em;
+        font-weight: vars.$font-weight-semi-bold;
+
+        margin: .5em 0;
+    }
+
+    &__qty {
+        font-size: 1em;
+        font-weight: vars.$font-weight-semi-bold;
+
+        margin: .5em 0;
+    }
+
+    /*
+    &__view-more-btn {
+        color: vars.$white;
+    }
+    */
+
+    &__body {
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .cart-item__left {
+            position: relative;
+
+            //width: 4em;
+
+            /*
+            @media screen and (min-width: vars.$lg) {
+                width: 6em;
+            }
+            */
+        }
+
+        .cart-item__right {
+            position: relative;
+
+            flex: 1 1 auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            //background: blue;
+
+            @media screen and (min-width:vars.$lg) {
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .product-info {
+                position: relative;
+                width: 100%;
+
+                //background: green;
+            }
+
+            .product-pricing {
+                position: relative;
+                width: 100%;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+
+                margin-left: auto;
+
+                //background: red;
+            }
+        }
+    }
+
+
+    &__btn-remove-item {
+        margin-left: 1em;
+    }
+
+}

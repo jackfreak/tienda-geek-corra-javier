@@ -18,10 +18,6 @@ $grid-breakpoints: (
 //@import "./partials/bootstrap-config"; // Custom bootstrap config
 @import "~bootstrap/scss/bootstrap";
 
-// TODO: Import only the ones we need
-@import "~bootstrap-icons/font/bootstrap-icons";
-
-
 @import "./styles/main.scss";
 
 

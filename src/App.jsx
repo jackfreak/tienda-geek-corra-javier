@@ -17,37 +17,41 @@ import { Error404 } from './components/misc/Error404/Error404';
 import { BreadcrumbBar } from './components/misc/BreadcrumbBar/BreadcrumbBar';
 import { Footer } from './components/footer/Footer/Footer';
 import { CartContainer } from './components/checkout/CartContainer/CartContainer';
+import { CartProvider } from './context/CartContext';
 
 
 function App() {
 
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Header />
+        <CartProvider>
+            <BrowserRouter>
+                <div className="App">
+                    <Header />
 
-                <Routes>
-                    <Route path='/' element={<HeroBanner />} />
-                    <Route path='*' element={ null } />
-                </Routes>
-
-                <BreadcrumbBar />
-
-                <main>
                     <Routes>
-                        <Route path='/' element={ <ItemListContainer /> } />
-                        <Route path='/category/:categoryId' element={ <ItemListContainer /> } />
-                        <Route path='/item/:itemId' element={<ItemDetailContainer />} />
-
-                        <Route path='/contact' element={<ContactContainer></ContactContainer>} />
-                        <Route path='/cart' element={ <CartContainer></CartContainer> } />
-                        <Route path='*' element={ <Error404 /> } />
+                        <Route path='/' element={<HeroBanner />} />
+                        <Route path='*' element={ null } />
                     </Routes>
-                </main>
 
-                <Footer />
-            </div>
-        </BrowserRouter>
+                    <BreadcrumbBar />
+
+                    <main>
+                        <Routes>
+                            <Route path='/' element={ <ItemListContainer /> } />
+                            <Route path='/category/:categoryId' element={ <ItemListContainer /> } />
+                            <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+
+                            <Route path='/contact' element={<ContactContainer></ContactContainer>} />
+                            <Route path='/cart' element={ <CartContainer></CartContainer> } />
+                            <Route path='*' element={ <Error404 /> } />
+                        </Routes>
+                    </main>
+
+                    <Footer />
+                </div>
+            </BrowserRouter>
+        </CartProvider>
+
     );
 }
 

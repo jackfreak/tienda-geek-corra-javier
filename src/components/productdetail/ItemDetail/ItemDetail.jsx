@@ -12,6 +12,7 @@ import { Button, Card } from 'react-bootstrap';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RichTextRenderer } from '../../misc/RichTextRenderer/RichTextRenderer';
+import { useCartContext } from '../../../context/CartContext';
 
 /**
  * Initial Quantity
@@ -22,18 +23,29 @@ const INITIAL_QTY = 1;
 const ItemDetail = ({itemData = {}}) => {
     const { id, name, description, image, price, stock } = itemData;
 
+    const { cart, addToCart, isInCart } = useCartContext();
+
     const [count, setCount] = useState(INITIAL_QTY);
-    const [purchaseQty, setPurchaseQty] = useState(0);
+    //const [purchaseQty, setPurchaseQty] = useState(0);
 
     const navigate = useNavigate();
 
 
-    const addToCart = (quantity) => {
-        setPurchaseQty(quantity);
+    const onAddToCart = (quantity) => {
+        const newCartItem = {
+            id,
+            name,
+            image,
+            price,
+            stock,
+            quantity,
+        };
+        //setPurchaseQty(quantity); // todo ?
+
+        addToCart(newCartItem);
     };
 
     const endPurchase = () => {
-        //console.log('click in endPurchase');
         navigate('/cart');
     };
 
@@ -52,20 +64,22 @@ const ItemDetail = ({itemData = {}}) => {
 
                         <p className='item-detail__stock'>{stock} { (stock > 1) ? 'disponibles' : 'disponible' }</p>
 
+                        {isInCart(id) && <p>El item ya esta agregado.</p>}
+
                         {
-                            (purchaseQty > 0)
+                            isInCart(id)
                             ?
                             <Button variant="dark"
-                                className="item-detail__btn-end-purchase"
+                                className="item-detail__btn-buy"
                                 onClick={ endPurchase }>
-                                Terminar compra
+                                Ver carrito
                             </Button>
                             :
                             <ItemCount
                             stock={stock} initial={INITIAL_QTY}
                             count={count}
                             setCount={setCount}
-                            onAddToCart={addToCart} />
+                            onAddToCart={onAddToCart} />
                         }
                     </div>
                 </div>

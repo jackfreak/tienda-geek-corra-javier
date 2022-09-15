@@ -5,7 +5,7 @@
  */
 
 import './Item.scss';
-//import styles from './Item.modules.scss';
+//import styles from './Item.modules.scss'; // TODO review css modules
 
 import { Card } from 'react-bootstrap';
 import { formatStringIntegerLocale } from '../../../helpers/stringHelpers';

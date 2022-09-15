@@ -1,11 +1,7 @@
 import './SearchBar.scss';
 
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-
+import { Container, Navbar, Form, Button }  from 'react-bootstrap';
+import { BsSearch } from 'react-icons/bs';
 
 const SearchBar = () => {
     return (
@@ -15,15 +11,15 @@ const SearchBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        
+
 
                         <Form className="d-flex">
                             <Form.Control type="search"
                                 placeholder="Buscar" className="me-2" aria-label="Buscar"
                             />
-                            
+
                             <Button variant="outline-dark">
-                                <i className="bi bi-search"></i>
+                                <BsSearch />
                                 <span className="visually-hidden">Buscar</span>
                             </Button>
                         </Form>

@@ -14,6 +14,7 @@ import Button from 'react-bootstrap/Button';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { CartWidget } from '../CartWidget/CartWidget';
 import { NavLink, Link } from 'react-router-dom';
+import { BsSearch } from 'react-icons/bs';
 
 const NavBar = () => {
     return (
@@ -56,7 +57,7 @@ const NavBar = () => {
 
                         <Nav.Item>
                             <Button variant="outline-dark">
-                                <i className="bi bi-search"></i>
+                                <BsSearch />
                                 <span className="visually-hidden">Buscar</span>
                             </Button>
                         </Nav.Item>
@@ -65,8 +66,6 @@ const NavBar = () => {
                             <CartWidget />
                         </Nav.Item>
                     </Nav>
-
-
                 </Navbar.Collapse>
             </Container>
         </Navbar>

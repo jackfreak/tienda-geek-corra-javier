@@ -7,7 +7,7 @@
 
 import "./ItemCount.scss"
 import { Button } from "react-bootstrap";
-
+import { BsDash, BsPlus } from 'react-icons/bs';
 
 
 const ItemCount = ({stock, initial=0, count, setCount, onAddToCart}) => {
@@ -20,7 +20,6 @@ const ItemCount = ({stock, initial=0, count, setCount, onAddToCart}) => {
     const handleIncrease = () => {
         setCount( Math.min(stock, count + 1) );
     };
-
 
 
     /*
@@ -38,13 +37,14 @@ const ItemCount = ({stock, initial=0, count, setCount, onAddToCart}) => {
 
 
     return (
+        (stock > 0) &&
         <div className="item-count">
 			<div className="item-count__quantity">
                 <Button className="item-count__decrease-btn"
                     variants="secondary"
                     onClick={handleDecrease}>
                     <span className="visually-hidden">Remover item</span>
-                    <i className="bi bi-dash"></i>
+                    <BsDash />
                 </Button>
 
                 <span className="item-count__input input-group-text">{ (stock >=1) ? count : 0 }</span>
@@ -53,7 +53,7 @@ const ItemCount = ({stock, initial=0, count, setCount, onAddToCart}) => {
                     variants="secondary"
                     onClick={handleIncrease}>
                     <span className="visually-hidden">Agregar item</span>
-                    <i className="bi bi-plus"></i>
+                    <BsPlus />
                 </Button>
 			</div>
 
