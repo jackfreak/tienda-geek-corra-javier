@@ -23,7 +23,7 @@ const INITIAL_QTY = 1;
 const ItemDetail = ({itemData = {}}) => {
     const { id, name, description, image, price, stock } = itemData;
 
-    const { cart, addToCart, isInCart } = useCartContext();
+    const { addToCart, isInCart } = useCartContext();
 
     const [count, setCount] = useState(INITIAL_QTY);
     //const [purchaseQty, setPurchaseQty] = useState(0);
