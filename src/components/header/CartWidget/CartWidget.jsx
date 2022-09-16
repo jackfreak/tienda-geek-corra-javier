@@ -12,14 +12,16 @@ import { BsCart2 } from 'react-icons/bs';
 
 
 const CartWidget = () => {
-    const { getCartQuantity } = useCartContext();
+    const { getCartQuantity, isCartEmpty } = useCartContext();
 
     return (
-        <Link to='/cart' className='btn btn-dark btn-cart-widget ms-2'>
-            <BsCart2 />
-            <span className='ms-1'>Cart</span>
-            <span>({ getCartQuantity() })</span>
-        </Link>
+        <div className='cart-widget'>
+            <Link to='/cart' className={`btn btn-dark cart-widget__btn ms-2 ${ isCartEmpty() ? 'cart-widget__btn--hidden' : '' }`}>
+                <BsCart2 />
+                <span className='ms-1'>Cart</span>
+                <span>({ getCartQuantity() })</span>
+            </Link>
+        </div>
     );
 };
 

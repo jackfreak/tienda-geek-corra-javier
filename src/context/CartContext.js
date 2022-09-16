@@ -39,6 +39,11 @@ const CartProvider = ({ children }) => {
         return cart.some((item) => item.id === id);
     }
 
+    function isCartEmpty() {
+        console.log(cart, cart.length);
+        return (cart.length === 0);
+    }
+
     function getCartQuantity() {
         return cart.reduce((previousValue, currentItem) => previousValue + currentItem.quantity, 0);
     }
@@ -58,6 +63,7 @@ const CartProvider = ({ children }) => {
             addToCart,
             removeFromCart,
             isInCart,
+            isCartEmpty,
             getCartQuantity,
             getCartTotalPrice,
             emptyCart,

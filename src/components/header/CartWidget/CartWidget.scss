@@ -1,18 +1,30 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
-.btn-cart-widget {
+.cart-widget {
     position: relative;
     font-size: 1em;
 
-    //background-color: $gray-300;
+    overflow: hidden;
 
-    //color: #fff;
+    &__btn {
+        position: relative;
+        font-size: 1em;
 
+        //background-color: $gray-300;
+        //color: #fff;
 
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
 
+        transition-duration: .3s;
+        transition-timing-function: ease-in-out;
+        transition-property: transform;
+    }
+
+    &__btn--hidden {
+        transform: translate(100%, 0);
+    }
 }
