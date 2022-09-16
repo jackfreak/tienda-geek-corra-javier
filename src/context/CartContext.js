@@ -27,6 +27,11 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     function addToCart(item) {
+        // Prevent duplicates. If the item is already in the cart, we won't add it again!
+        if (isInCart(item.id)) {
+            return;
+        }
+
         setCart([...cart, item]);
     }
 
