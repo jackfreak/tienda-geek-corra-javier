@@ -47,18 +47,21 @@
     }
 
 
-    &__payments {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
+    .payments,
+    .shipment {
+        &__list {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
 
-        flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
     }
 
-    &__payment-logo,
-    &__shipment-logo {
+    .payment-logo,
+    .shipment-logo {
         width: 2.2em;
         height: auto;
 
@@ -107,6 +110,35 @@
 
         p {
             color: inherit;
+        }
+    }
+
+
+    .newsletter {
+        .form-text {
+            font-size: .8em;
+        }
+    }
+
+    .social {
+        &__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            gap: .7em;
+        }
+
+        &__icon {
+            width: auto;
+            height: 1.5em;
+
+            @media screen and (hover: hover) {
+                &:hover {
+                    color: $gray-600;
+                }
+            }
         }
     }
 }

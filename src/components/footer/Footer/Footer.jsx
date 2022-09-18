@@ -7,7 +7,7 @@
 import { FOOTER_IMAGES as IMGS } from './FOOTER_IMAGES';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
-
+import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs';
 
 const Footer = () => {
     return (
@@ -16,49 +16,76 @@ const Footer = () => {
                 <div className='container main-footer__links'>
                     <div className='row'>
                         <div className='col-md-4'>
-                            <h3>NEWSLETTER</h3>
-                            <div className='main-footer__box'>
-                                <p>TO-DO</p>
+                            <div className='newsletter'>
+                                <h3>NEWSLETTER</h3>
+                                <div className='main-footer__box'>
+                                    <form>
+                                        <div className='mb-3'>
+                                            <label for='inputEmail' className='form-label'>Email</label>
+                                            <input type='email' class='form-control' id='inputEmail' aria-describedby='emailHelp' />
+                                            <div id='emailHelp' class='form-text'>Recibí las últimas novedades en tu correo</div>
+                                        </div>
+
+                                        <button type='submit' class='btn btn-primary'>Suscribirse</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
 
                         <div className='col-md-4'>
-                            <h3>MEDIOS DE PAGO</h3>
-                            <div className='main-footer__payments'>
-                                <img src={IMGS.visa} className="main-footer__payment-logo" alt="visa" />
-                                <img src={IMGS.mastercard} className="main-footer__payment-logo" alt="mastercard" />
-                                <img src={IMGS.amex} className="main-footer__payment-logo" alt="amex" />
-                                <img src={IMGS.diners} className="main-footer__payment-logo" alt="diners" />
-                                <img src={IMGS.paypal} className="main-footer__payment-logo" alt="paypal" />
-                                <img src={IMGS.banelco} className="main-footer__payment-logo" alt="banelco" />
-                                <img src={IMGS.cabal} className="main-footer__payment-logo" alt="cabal" />
-                                <img src={IMGS.tarjetaNaranja} className="main-footer__payment-logo" alt="tarjeta naranja" />
-                                <img src={IMGS.tarjetaShopping} className="main-footer__payment-logo" alt="tarjeta shopping" />
-                                <img src={IMGS.mercadopago} className="main-footer__payment-logo" alt="mercadopago" />
-                                <img src={IMGS.argencard} className="main-footer__payment-logo" alt="argencard" />
-                                <img src={IMGS.nativa} className="main-footer__payment-logo" alt="nativa" />
-                                <img src={IMGS.cencosud} className="main-footer__payment-logo" alt="cencosud" />
-                                <img src={IMGS.pagofacil} className="main-footer__payment-logo" alt="pagofacil" />
-                                <img src={IMGS.rapipago} className="main-footer__payment-logo" alt="rapipago" />
+                            <div className='payments'>
+                                <h3>MEDIOS DE PAGO</h3>
+
+                                <div className='payments__list'>
+                                    <img src={IMGS.visa} className="payment-logo" alt="visa" />
+                                    <img src={IMGS.mastercard} className="payment-logo" alt="mastercard" />
+                                    <img src={IMGS.amex} className="payment-logo" alt="amex" />
+                                    <img src={IMGS.diners} className="payment-logo" alt="diners" />
+                                    <img src={IMGS.paypal} className="payment-logo" alt="paypal" />
+                                    <img src={IMGS.banelco} className="payment-logo" alt="banelco" />
+                                    <img src={IMGS.cabal} className="payment-logo" alt="cabal" />
+                                    <img src={IMGS.tarjetaNaranja} className="payment-logo" alt="tarjeta naranja" />
+                                    <img src={IMGS.tarjetaShopping} className="payment-logo" alt="tarjeta shopping" />
+                                    <img src={IMGS.mercadopago} className="payment-logo" alt="mercadopago" />
+                                    <img src={IMGS.argencard} className="payment-logo" alt="argencard" />
+                                    <img src={IMGS.nativa} className="payment-logo" alt="nativa" />
+                                    <img src={IMGS.cencosud} className="payment-logo" alt="cencosud" />
+                                    <img src={IMGS.pagofacil} className="payment-logo" alt="pagofacil" />
+                                    <img src={IMGS.rapipago} className="payment-logo" alt="rapipago" />
+                                </div>
                             </div>
 
-                            <h3>FORMAS DE ENVIOS</h3>
-                            <div className='main-footer__shipment'>
-                                <img src={IMGS.correoargentino} className="main-footer__shipment-logo" alt="Correo Argentino" />
-                                <img src={IMGS.mercadoenvios} className="main-footer__shipment-logo" alt="Mercado Envios" />
-                                <img src={IMGS.personalizado} className="main-footer__shipment-logo" alt="Personalizado" />
-                                <img src={IMGS.retirolocal} className="main-footer__shipment-logo" alt="Retiro en Local" />
+                            <div className='shipment'>
+                                <h3>FORMAS DE ENVIOS</h3>
+
+                                <div className='shipment__list'>
+                                    <img src={IMGS.correoargentino} className="shipment-logo" alt="Correo Argentino" />
+                                    <img src={IMGS.mercadoenvios} className="shipment-logo" alt="Mercado Envios" />
+                                    <img src={IMGS.personalizado} className="shipment-logo" alt="Personalizado" />
+                                    <img src={IMGS.retirolocal} className="shipment-logo" alt="Retiro en Local" />
+                                </div>
+
+                                <p>Envíos a todos el país.</p>
                             </div>
-                            <p>Envíos a todos el país.</p>
                         </div>
 
                         <div className='col-md-4'>
-                            <h3>Nuestras Redes</h3>
-                            <div className='main-footer__box'></div>
+                            <div className='social'>
+                                <h3>Nuestras Redes</h3>
 
-                            <h3>Contacto</h3>
-                            <div className='main-footer__box'>
-                                <i></i><span><a href='mailto:contacto@tiendageek.netlify.io'>contacto@tiendageek.netlify.io</a></span>
+                                <ul className='main-footer__box social__list'>
+                                    <li><a href='https://www.facebook.com/' target='_blank' rel='noreferrer' title='Facebook'><BsFacebook className='social__icon'></BsFacebook></a></li>
+                                    <li><a href='https://www.instagram.com/' target='_blank' rel='noreferrer' title='Instagram'><BsInstagram className='social__icon'></BsInstagram></a></li>
+                                    <li><a href='https://www.twitter.com/' target='_blank' rel='noreferrer' title='Twitter'><BsTwitter className='social__icon'></BsTwitter></a></li>
+                                    <li><a href='https://www.youtube.com/' target='_blank' rel='noreferrer' title='YouTube'><BsYoutube className='social__icon'></BsYoutube></a></li>
+                                </ul>
+                            </div>
+
+                            <div className='contact'>
+                                <h3>Contacto</h3>
+                                <div className='main-footer__box'>
+                                    <i></i><span><a href='mailto:contacto@tiendageek.netlify.io'>contacto@tiendageek.netlify.io</a></span>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -40,7 +40,6 @@ const CartProvider = ({ children }) => {
     }
 
     function isCartEmpty() {
-        console.log(cart, cart.length);
         return (cart.length === 0);
     }
 

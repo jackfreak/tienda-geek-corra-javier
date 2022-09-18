@@ -13,10 +13,10 @@ import productsJSONData from '../data/products.json';
 const loadItems = () => {
     //console.warn('loadItems');
 
-    return new Promise( (resolve, reject) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(productsJSONData);
-        }, 2000);
+        }, 500);
     });
 };
 

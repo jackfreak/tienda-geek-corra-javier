@@ -21,8 +21,16 @@ const CartContainer = () => {
             <h2>Tu carrito</h2>
 
             {
-                isCartEmpty()
+                (isCartEmpty())
                 ?
+                <>
+                    <Alert variant='primary'>
+                        Tu carrito está vacío.
+                    </Alert>
+
+                    <Link to='/' className='btn btn-link'>Mira nuestros productos!</Link>
+                </>
+                :
                 <>
                     <div className='cart-container__item-list'>
                         {cart.map((cartItem, index) => <CartItem key={index} item={cartItem} />)}
@@ -34,14 +42,6 @@ const CartContainer = () => {
                         <Button onClick={ emptyCart } className='btn btn-danger'>Vaciar Carrito</Button>
                     </div>
 
-                </>
-                :
-                <>
-                    <Alert variant='primary'>
-                        Tu carrito está vacío.
-                    </Alert>
-
-                    <Link to='/' className='btn btn-link'>Mira nuestros productos!</Link>
                 </>
             }
 
