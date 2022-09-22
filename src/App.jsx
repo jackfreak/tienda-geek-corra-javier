@@ -16,41 +16,57 @@ import { ContactContainer } from './components/contact/ContactContainer';
 import { Error404 } from './components/misc/Error404/Error404';
 import { BreadcrumbBar } from './components/misc/BreadcrumbBar/BreadcrumbBar';
 import { Footer } from './components/footer/Footer/Footer';
-import { CartContainer } from './components/checkout/CartContainer/CartContainer';
+import { CartContainer } from './components/cart/CartContainer/CartContainer';
 import { CartProvider } from './context/CartContext';
+import { AppRoute } from './constants/AppRoute';
+import { LoginProvider } from './context/LoginContext';
+import { LoginScreen } from './components/login/LoginScreen/LoginScreen';
+//import { AdminContainer } from './components/admin/AdminContainer/AdminContainer';
 
 
 function App() {
-
     return (
-        <CartProvider>
-            <BrowserRouter>
-                <div className="App">
-                    <Header />
+        <LoginProvider>
+            <CartProvider>
+                <BrowserRouter>
+                    <div className="App">
+                        <Header />
 
-                    <Routes>
-                        <Route path='/' element={<HeroBanner />} />
-                        <Route path='*' element={ null } />
-                    </Routes>
-
-                    <BreadcrumbBar />
-
-                    <main>
                         <Routes>
-                            <Route path='/' element={ <ItemListContainer /> } />
-                            <Route path='/category/:categoryId' element={ <ItemListContainer /> } />
-                            <Route path='/item/:itemId' element={<ItemDetailContainer />} />
-
-                            <Route path='/contact' element={<ContactContainer></ContactContainer>} />
-                            <Route path='/cart' element={ <CartContainer></CartContainer> } />
-                            <Route path='*' element={ <Error404 /> } />
+                            <Route path='/' element={<HeroBanner />} />
+                            <Route path='*' element={ null } />
                         </Routes>
-                    </main>
 
-                    <Footer />
-                </div>
-            </BrowserRouter>
-        </CartProvider>
+                        <BreadcrumbBar />
+
+                        <main>
+                            <Routes>
+                                <Route path='/' element={<ItemListContainer />} />
+
+                                <Route path={AppRoute.Login} element={<LoginScreen></LoginScreen>} />
+
+                                <Route path={AppRoute.Category + '/:categoryId' } element={ <ItemListContainer /> } />
+                                <Route path={AppRoute.Product + '/:itemId'} element={<ItemDetailContainer />} />
+
+                                <Route path={AppRoute.Contact} element={<ContactContainer></ContactContainer>} />
+                                <Route path={AppRoute.Cart} element={<CartContainer></CartContainer>} />
+
+
+                                {/*
+                                ADMIN TO CREATE PRODUCTS IN FIREBASE WITH A BATCH.
+                                TODO: REMOVE ONCE IS NO LONGER NECCESARY
+                                <Route path='/admin' element={ <AdminContainer></AdminContainer> } />
+                                */}
+
+                                <Route path='*' element={<Error404 />} />
+                            </Routes>
+                        </main>
+
+                        <Footer />
+                    </div>
+                </BrowserRouter>
+            </CartProvider>
+        </LoginProvider>
 
     );
 }

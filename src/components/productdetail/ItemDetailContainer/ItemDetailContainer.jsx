@@ -6,7 +6,7 @@
 
 import './ItemDetailContainer.scss';
 import { useEffect, useState } from 'react';
-import { loadItem } from '../../../helpers/loadItem';
+import { loadProductDetail } from '../../../services/productsServices';
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { Container, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        loadItem(itemId)
+        loadProductDetail(itemId)
         .then( (result) => {
             //console.log('itemData', result);
             setItem(result);

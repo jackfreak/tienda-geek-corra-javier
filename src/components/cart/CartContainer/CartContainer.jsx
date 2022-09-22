@@ -33,7 +33,7 @@ const CartContainer = () => {
                 :
                 <>
                     <div className='cart-container__item-list'>
-                        {cart.map((cartItem, index) => <CartItem key={index} item={cartItem} />)}
+                        {cart.map((cartItem) => <CartItem key={cartItem.id} item={cartItem} />)}
                     </div>
 
                     <div className='my-3'>

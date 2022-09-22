@@ -4,12 +4,19 @@
  * @author Javier Alejandro Corra
  */
 
-import { FOOTER_IMAGES as IMGS } from './FOOTER_IMAGES';
-import { Link } from 'react-router-dom';
 import './Footer.scss';
+import { FOOTER_IMAGES as IMGS } from './FOOTER_IMAGES';
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs';
 
+
 const Footer = () => {
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        // TODO
+    };
+
     return (
         <footer className='main-footer'>
             <div className='main-footer__top'>
@@ -19,14 +26,14 @@ const Footer = () => {
                             <div className='newsletter'>
                                 <h3>NEWSLETTER</h3>
                                 <div className='main-footer__box'>
-                                    <form>
+                                    <form action=''>
                                         <div className='mb-3'>
-                                            <label for='inputEmail' className='form-label'>Email</label>
-                                            <input type='email' class='form-control' id='inputEmail' aria-describedby='emailHelp' />
-                                            <div id='emailHelp' class='form-text'>Recibí las últimas novedades en tu correo</div>
+                                            <label htmlFor='inputEmail' className='form-label'>Email</label>
+                                            <input type='email' className='form-control' id='inputEmail' aria-describedby='emailHelp' />
+                                            <div id='emailHelp' className='form-text'>Recibí las últimas novedades en tu correo</div>
                                         </div>
 
-                                        <button type='submit' class='btn btn-primary'>Suscribirse</button>
+                                        <button type='submit' className='btn btn-primary' onClick={ onSubmit }>Suscribirse</button>
                                     </form>
                                 </div>
                             </div>
@@ -94,10 +101,10 @@ const Footer = () => {
 
             <div className='main-footer__middle'>
                 <div className='container main-footer__links'>
-                    <Link to='/terminos-y-condiciones'>Términos y condiciones</Link>
-                    <Link to='/politica-de-privacidad'>Política de privacidad</Link>
-                    <Link to='/costos-financiacion'>Costos de financiación</Link>
-                    <Link to='/boton-de-arrepentimiento'>Botón de arrepentimiento</Link>
+                    <a href='./terminos-y-condiciones.html' target='_blank' rel='noopener noreferrer'>Términos y condiciones</a>
+                    <a href='./politica-de-privacidad.html' target='_blank' rel='noopener noreferrer'>Política de privacidad</a>
+                    <a href='./costos-financiacion.html' target='_blank' rel='noopener noreferrer'>Costos de financiación</a>
+                    <a href='./boton-de-arrepentimiento.html' target='_blank' rel='noopener noreferrer'>Botón de arrepentimiento</a>
                 </div>
             </div>
 

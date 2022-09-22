@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { React } from 'react';
 import { Container } from 'react-bootstrap';
 import { capitalize } from '../../../helpers/stringHelpers';
+import { AppRoute } from '../../../constants/AppRoute';
 //import { Breadcrumb } from 'react-bootstrap';
 
 /*
@@ -48,22 +49,22 @@ const routes = [
     },
 
     {
-        path: '/category',
+        path: AppRoute.Category,
         breadcrumb: null,
     },
 
     {
-        path: '/category/:categoryId',
+        path: `${AppRoute.Category}/:categoryId`,
         breadcrumb: DynamicCategoryBreadcrumb,
     },
 
     {
-        path: '/item',
+        path: AppRoute.Product,
         breadcrumb: null,
     },
 
     {
-        path: '/item/:itemId',
+        path: `${AppRoute.Product}/:itemId`,
         breadcrumb: DynamicItemBreadcrumb,
     },
 ];

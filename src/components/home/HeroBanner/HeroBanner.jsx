@@ -10,7 +10,7 @@ import heroBanner2 from '../../../assets/images/hero-banner-2.jpg';
 import heroBanner3 from '../../../assets/images/hero-banner-3.jpg';
 import heroBanner4 from '../../../assets/images/hero-banner-4.jpg';
 
-import { Container, Carousel } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 const BANNERS = [
     {
@@ -33,7 +33,7 @@ const BANNERS = [
 
 const HeroBanner = () => {
     return (
-        <Container className="hero-banner p-0" as="section">
+        <section className="hero-banner container p-0 mt-4" >
             <Carousel nextLabel="Siguiente" prevLabel="Anterior">
                 {BANNERS.map((banner, index) => {
                     return (
@@ -47,7 +47,7 @@ const HeroBanner = () => {
                     );
                 })}
             </Carousel>
-        </Container>
+        </section>
     );
 };
 

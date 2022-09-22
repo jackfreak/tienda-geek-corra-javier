@@ -9,7 +9,7 @@ import './ItemListContainer.scss';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import { ItemList } from '../ItemList/ItemList';
 import { useEffect, useState } from 'react';
-import { loadItems } from '../../../helpers/loadItems';
+import { loadProducts } from '../../../services/productsServices';
 import { useParams } from 'react-router-dom';
 
 
@@ -43,20 +43,13 @@ const ItemListContainer = () => {
     };
 
 
-
     // Will execute on mount
     useEffect(() => {
         setLoading(true);
 
-        loadItems()
+        loadProducts(categoryId)
         .then((result) => {
-            if(!categoryId) {
-                setProducts(result);
-
-            } else {
-                const filteredByCategory = result.filter( (product) => (product.categoryId === categoryId) );
-                setProducts(filteredByCategory);
-            }
+            setProducts(result);
         })
         .catch((err) => {
             console.error(err);

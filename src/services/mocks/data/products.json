@@ -12,7 +12,7 @@
         "id": 2,
         "name": "AKIRA VOL. 2",
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo</p> <p>En un caótico Neo-Tokio recién emergido de las cenizas de la III Guerra Mundial, Kaneda, Tetsuo y compañía se ven envueltos en el misterio de Akira, un extraño ser que en realidad es un proyecto científco secreto que debería hacer evolucionar a la raza humana.</p>",
-        "image": "/images/products/akiravol021-1313093cb386fe612215905332279410-240-0.jpeg",
+        "image": "/images/products/akiravol021-240-0.jpg",
         "price": 4220,
         "stock": 3,
         "categoryId": "manga"
@@ -21,7 +21,7 @@
         "id": 3,
         "name": "AKIRA VOL. 3",
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo.</p> <p>En un caótico Neo-Tokio recién emergido de las cenizas de la III Guerra Mundial, Kaneda, Tetsuo y compañía se ven envueltos en el misterio de Akira, un extraño ser que en realidad es un proyecto científco secreto que debería hacer evolucionar a la raza humana.</p>",
-        "image": "/images/products/akiravol031-907f0143351a86975415905335560257-240-0.jpeg",
+        "image": "/images/products/akiravol031-240-0.jpg",
         "price": 4090,
         "stock": 1,
         "categoryId": "manga"
@@ -30,7 +30,7 @@
         "id": 4,
         "name": "AKIRA VOL. 4",
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo.</p> <p>Tokio se encuentra en un estado post apocalíptico. La respuesta para detener a Akira puede estar en manos de la misteriosa Lady Miyako, miembro poderoso de la fraternidad psíquica. Mientras tanto, Tetsuo comienza a tener dudas, se entera de los secretos tras el proyecto que creó a Akira y comienza a tomar cartas en el asunto.</p>",
-        "image": "/images/products/akiravol041-66c52e0624815199dc15905337117802-240-0.jpeg",
+        "image": "/images/products/akiravol041-240-0.jpg",
         "price": 4560,
         "stock": 5,
         "categoryId": "manga"
@@ -39,7 +39,7 @@
         "id": 5,
         "name": "AKIRA VOL. 5",
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo</p> <p>Neo-Tokio yace en ruinas. De los escombros ha surgido un imperio poblado por fanáticos que adoran y temen al poderoso Akira por igual. El mundo no está tomando la amenaza psíquica a la ligera y una fuerza militar global se está concentrando para enfrentarse al imperio. ¿Serán sufcientes para destruir a Akira y su primer ministro, Tetsuo, un trastornado adolescente con un inmenso poder que solo es comparable con su inmensa ambición?</p>",
-        "image": "/images/products/akiravol051-0d082d2ca90199fcc615905338989873-240-0.jpeg",
+        "image": "/images/products/akiravol051-240-0.jpg",
         "price": 4480,
         "stock": 2,
         "categoryId": "manga"
@@ -48,7 +48,7 @@
         "id": 6,
         "name": "AKIRA VOL. 6",
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo</p> <p>¡TOMO FINAL! En un devastada Neo-Tokio del siglo XXI, el poder armado de la Tierra está concentrado contra los poderes divinos de dos jóvenes titanes psíquicos, el mudo Akira y el trastornado Tetsuo, quien ha devastado la superficie de la Luna por pura diversión. A medida que sus habilidades se expanden, las fuerzas convergen para una confrontación final. El destino del planeta está en manos de simples mortales... y de la mente de un niño.</p>",
-        "image": "/images/products/akiravol061-2ef6bba4bb84f3d41115905340018898-240-0.jpeg",
+        "image": "/images/products/akiravol061-240-0.jpg",
         "price": 4750,
         "stock": 11,
         "categoryId": "manga"
@@ -57,7 +57,7 @@
         "id": 7,
         "name": "ATTACK ON TITAN VOL. 22",
         "description": "<p>Tras la terrible batalla contra los titanes, en especial contra el Titán Bestia, el Escuadrón de Reconocimiento llega a la casa natal de Eren, pero el secreto que se oculta en el sótano no es en absoluto lo que se esperaban.</p>",
-        "image": "/images/products/aot_22_2da-edicion-cov1-2a57931a0d85aa83cd16203294556357-240-0.jpeg",
+        "image": "/images/products/aot_22_2da-edicion-cov1-240-0.jpg",
         "price": 1500,
         "stock": 50,
         "categoryId": "manga"
@@ -66,7 +66,7 @@
         "id": 8,
         "name": "DRAGON HEAD VOL. 1",
         "description": "<p>Lo que debió haber sido un tranquilo viaje escolar se vuelveuna pesadilla cuando un tren lleno de estudiantes descarrila dentro de un túnel.</p>",
-        "image": "/images/products/dragon_head_1_sobrecubierta1-875f6b7efa3fd1c7ae16518570766742-240-0.jpeg",
+        "image": "/images/products/dragon_head_1_sobrecubierta1-240-0.jpg",
         "price": 1650,
         "stock": 0,
         "categoryId": "manga"
@@ -75,7 +75,7 @@
         "id": 9,
         "name": "SOUL EATER VOL. 11",
         "description": "<p>La aracnofobia ha tomado la ofensiva y extiende la locura de los Kishin por todo el mundo, amenazando a cualquiera que se interponga en su camino.</p>",
-        "image": "/images/products/soul-eater-11-cover1-f53c77001ec13ca5b215950050715010-240-0.jpeg",
+        "image": "/images/products/soul-eater-11-cover1-240-0.jpg",
         "price": 990,
         "stock": 15,
         "categoryId": "manga"
@@ -84,7 +84,7 @@
         "id": 10,
         "name": "SANDMAN VOL. 1: PRELUDIOS Y NOCTURNOS",
         "description": "<p>Una de las novelas gráficas más populares y aclamadas por la crítica de todos los tiempos, la galardonada obra maestra de Neil Gaiman, SANDMAN, estableció el estándar para la fantasía lírica y madura en la era moderna de los cómics.</p>",
-        "image": "/images/products/sandman_cov_arg1-fc03daafcf2730e73515948585770263-240-0.jpeg",
+        "image": "/images/products/sandman_cov_arg1-240-0.jpg",
         "price": 3040,
         "stock": 6,
         "categoryId": "comics"
@@ -93,7 +93,7 @@
         "id": 11,
         "name": "GHOST IN THE SHELL",
         "description": "<p>A mediados del siglo XXI, las personas dependen de implantes mecánicos y los robots reciben tejido humano como mejora. En este contexto, la mayor Motoko Kusanagi tiene la tarea de perseguir a los más peligrosos terroristas y cibercriminales, incluyendo a unos hackers capaces de explotar la interfaz humano/máquina y reprogramarlos para transformarlos en sus marionetas.</p>",
-        "image": "/images/products/tgits011-742e94f43dadefac9b15905386616797-240-0.jpeg",
+        "image": "/images/products/tgits011-240-0.jpg",
         "price": 2640,
         "stock": 3,
         "categoryId": "manga"
@@ -102,7 +102,7 @@
         "id": 12,
         "name": "KINGDOM COME: EDICIÓN ABSOLUTA",
         "description": "<p><strong>Autores:</strong> Mark Waid • Alex Ross</p> <p>Después de décadas como campeones de la Tierra, todos los miembros de la Liga de la Justicia se han retirado del ojo público, reemplazados por una nueva generación de luchadores contra el crimen cuyo tipo de justicia deja a la humanidad aterrorizada en lugar de inspirada. Pero con el futuro del planeta en pe - ligro, Superman, Wonder Woman y Batman deben salir de su retiro para luchar por última vez por la verdad y la justicia...</p>",
-        "image": "/images/products/kingdom-come-cov-arg-11-ee7ba9ae124d4a0ada16130629664661-240-0.jpeg",
+        "image": "/images/products/kingdom-come-cov-arg-11-240-0.jpg",
         "price": 4880,
         "stock": 12,
         "categoryId": "comics"
@@ -111,7 +111,7 @@
         "id": 13,
         "name": "DOOMSDAY CLOCK: PRIMERA PARTE",
         "description": "<p><strong>Autores:</strong> Johns • Frank</p> <p>Siete años después de los eventos de Watchmen, Adrian Veidt ha sido expuesto como el asesino de millones. Ahora fugitivo, se le ocurrió un nuevo plan para salvar al mundo que alguna vez lo adoró: encontrar al Dr. Manhattan. Junto a un nuevo Rorschach y los fatales Mimo y Marioneta, la búsqueda los llevará a un Universo DC al borde del colapso.</p>",
-        "image": "/images/products/doomsday_clock_vol_01_cov_arg1-0dec0f9c563fc5a6bb16215517985773-240-0.jpeg",
+        "image": "/images/products/doomsday_clock_vol_01_cov_arg1-240-0.jpg",
         "price": 3500,
         "stock": 19,
         "categoryId": "comics"
@@ -120,7 +120,7 @@
         "id": 14,
         "name": "DOOMSDAY CLOCK: SEGUNDA PARTE",
         "description": "<p><strong>Autores:</strong> Johns • Frank</p> <p>¿Dónde o qué es la Sociedad de Justicia de América? ¿Quién es Wally West? A medida que las respuestas a los misterios que atormentan a nuestros héroes se revelan, una cosa es segura: Su mundo nunca será el mismo. Con la Tierra al borde de una superguerra internacional, Black Adam y sus seguidores avanzan mientras nuestros héroes están ocupados en otra parte. El Dr. Manhattan ha puesto en marcha su juego final. El Reloj del Apocalipsis continúa avanzando hacia la medianoche con el destino de todo el multiverso colgando en la balanza.</p>",
-        "image": "/images/products/doomsdayclockvol021-1d5d82540814ccb66315908689620786-240-0.jpeg",
+        "image": "/images/products/doomsdayclockvol021-240-0.jpg",
         "price": 3650,
         "stock": 24,
         "categoryId": "comics"
@@ -129,7 +129,7 @@
         "id": 15,
         "name": "LA MUERTE DE SUPERMAN",
         "description": "<p><strong>Autores:</strong> Simonson • Jurgens • Bogdanove • Grummet • Otros</p> <p>¡El evento épico que conmovió al mundo y cambió a superman para siempre! Doomsday, una criatura cuyo único propósito es la destrucción, ha aterrizado en la Tierra. La Liga de la Justicia hizo un valiente y desesperado intento por detenerlo, pero cuando la bestia se acercó a Metrópolis fue Superman quien respondió a la llamada para enfrentarlo. Y entonces sucedió lo impensable.El Hombre de Acero... ¡murió!</p>",
-        "image": "/images/products/la_muerte_de_superman_2da_cov1-5b6a1e3579ad88846416336646797558-240-0.jpeg",
+        "image": "/images/products/la_muerte_de_superman_2da_cov1-240-0.jpg",
         "price": 3650,
         "stock": 13,
         "categoryId": "comics"
@@ -138,7 +138,7 @@
         "id": 16,
         "name": "BATMAN: LA BROMA ASESINA",
         "description": "<p><strong>Autores:</strong> Moore • Bolland</p> <p>Un mal día. De acuerdo con el motor de locura y caos conocido como el Joker, eso es todo lo que separa a los sanos de los psicóticos. Alan Moore (WATCHMEN) y Brian Bolland (CAMELOT 3000) asumieron hace 30 años el origen del mejor supervillano de los cómics y cambiaron el mundo de Batman para siempre.</p>",
-        "image": "/images/products/batman-la-broma-asesina-4ta-edicion-cov1-fcc52891d94ffdfa4d16485608759371-240-0.jpeg",
+        "image": "/images/products/batman-la-broma-asesina-4ta-edicion-cov1-240-0.jpg",
         "price": 3170,
         "stock": 6,
         "categoryId": "comics"
@@ -147,7 +147,7 @@
         "id": 17,
         "name": "BATMAN: EL REGRESO DEL CABALLERO OSCURO",
         "description": "<p><strong>Autores:</strong> Miller • Janson • Varley</p> <p>Batman regresa lleno de furia para enfrentarse a una nueva generación de criminales e igualar su nivel de violencia. Celebra una de las historias más influyentes jamás contadas en el medio de los cómics con este clásico indiscutible.</p>",
-        "image": "/images/products/el-regreso-del-caballero-oscuro-cov1-1f23a0c0f947fbe9ca16318167373326-240-0.jpeg",
+        "image": "/images/products/el-regreso-del-caballero-oscuro-cov1-240-0.jpg",
         "price": 3600,
         "stock": 18,
         "categoryId": "comics"
@@ -156,7 +156,7 @@
         "id": 18,
         "name": "BATMAN: AÑO UNO",
         "description": "<p><strong>Autores:</strong> Miller • Mazzucchelli</p> <p>A su vez brutal, tierna, sombría y esperanzadora, la magistral reinvención de Miller y Mazzucchelli del primer año de Bruce Wayne como el campeón de la ciudad de Gotham ha electrificado generaciones de lectores con su fusión sin precedentes de realismo crudo y elegancia de forma. Esta edición incluye el guion completo y los lápices originales de Batman #407, introducciones de Miller y el editor de la serie, Denny O'Neil, y un postfacio ilustrado por Mazzucchelli.</p>",
-        "image": "/images/products/batman_ano_uno-cov-arg1-60c2ec9be621447ebf16003701802536-240-0.jpeg",
+        "image": "/images/products/batman_ano_uno-cov-arg1-240-0.jpg",
         "price": 2980,
         "stock": 5,
         "categoryId": "comics"

@@ -12,12 +12,14 @@
         position: relative;
         font-size: 1em;
 
-        min-width: 7em;
+        min-width: 5em;
 
+        /*
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        */
 
 
         //transform: translate(0, -100%);
@@ -26,8 +28,25 @@
         }
     }
 
-    &__btn--hidden {
-        display: none;
+    &__btn-top {
+        position: relative;
+
+        font-size: 1em;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__qty {
+        font-size: .9em;
+        margin-left: .5em;
+    }
+
+    &__btn-label {
+        position: relative;
+        font-size: .8em;
     }
 
     &__icon {
@@ -35,25 +54,4 @@
         height: 1em;
     }
 
-    &__spacer {
-        position: relative;
-        min-width: 7em;
-
-        font-size: 1em;
-
-        &:before {
-            content: '⌒°(ᴖ◡ᴖ)°⌒';
-        }
-
-        &:active {
-            &:before {
-                content: '╰°(•◡•)°╯';
-            }
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-left: .5em;
-        }
-
-    }
 }

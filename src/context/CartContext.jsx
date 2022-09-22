@@ -20,7 +20,7 @@ const useCartContext = () => {
 
 /**
  * Provider
- * @param children Array of children
+ * @param {[]}} children Array of children
  * @returns
  */
 const CartProvider = ({ children }) => {

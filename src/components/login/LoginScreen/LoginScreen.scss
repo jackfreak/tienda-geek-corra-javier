@@ -1,16 +1,14 @@
 @use "/src/styles/variables/variables" as vars;
-@use "/src/styles/mixins/mixins";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/variables";
 
-
-.main-header {
+.login-screen {
     position: relative;
 
-    font-size: 1em;
+    width: 100%;
 
-    background-color: $gray-300;
-
-    @include mixins.box-shadow-smooth;
+    @include media-breakpoint-up(lg) {
+        width: 33em;
+    }
 }

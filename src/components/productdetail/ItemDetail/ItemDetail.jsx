@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RichTextRenderer } from '../../misc/RichTextRenderer/RichTextRenderer';
 import { useCartContext } from '../../../context/CartContext';
+import { AppRoute } from '../../../constants/AppRoute';
 
 /**
  * Initial Quantity
@@ -46,7 +47,7 @@ const ItemDetail = ({itemData = {}}) => {
     };
 
     const endPurchase = () => {
-        navigate('/cart');
+        navigate(AppRoute.Cart);
     };
 
 

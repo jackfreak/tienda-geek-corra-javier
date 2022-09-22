@@ -31,4 +31,7 @@ $grid-breakpoints: (
     align-items: initial;
 
     min-height: 100vh;
+
+    --bs-link-color: vars.$black;
+    --bs-link-hover-color: vars.$gray-darker;
 }

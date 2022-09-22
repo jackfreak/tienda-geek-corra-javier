@@ -10,6 +10,7 @@ import { formatStringIntegerLocale } from '../../../helpers/stringHelpers';
 import { Link } from 'react-router-dom';
 import { BsTrashFill } from 'react-icons/bs';
 import { useCartContext } from '../../../context/CartContext';
+import { AppRoute } from '../../../constants/AppRoute';
 
 const CartItem = ({ item }) => {
     const { id, name, image, price, quantity } = item;
@@ -26,7 +27,7 @@ const CartItem = ({ item }) => {
 
                 <div className='cart-item__right'>
                     <div className='product-info'>
-                        <Link to={`/item/${id}`} className='cart-item__view-item-btn cart-item__title'><h3>{name}</h3></Link>
+                        <Link to={`${ AppRoute.Product }/${id}`} className='cart-item__view-item-btn cart-item__title'><h3>{name}</h3></Link>
 
                         <Card.Text className='cart-item__qty'>Cantidad: { quantity }</Card.Text>
                     </div>
