@@ -12,8 +12,11 @@ import { NavLink, Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import { CartWidget } from '../CartWidget/CartWidget';
 import { AppRoute } from '../../../utils/constants/AppRoute';
+import { useLoginContext } from '../../../contexts/LoginContext';
 
 const NavBar = () => {
+    const { user } = useLoginContext();
+
     return (
         <Navbar collapseOnSelect expand='lg' className='main-nav-bar'>
             <Container>
@@ -57,6 +60,15 @@ const NavBar = () => {
                                 Contacto
                             </NavLink>
                         </Nav.Item>
+
+                        {
+                            user.isLogged &&
+                            <Nav.Item as='li'>
+                                <NavLink to={AppRoute.AdminPanel} className='nav-link'>
+                                    <strong>ADMIN PANEL</strong>
+                                </NavLink>
+                            </Nav.Item>
+                        }
 
                         <NavDropdown title='Mi Cuenta' menuVariant='light' as='li' id='nav-dropdown-my-account'>
                             <NavDropdown.Item as={Link} to={AppRoute.Registration}>
