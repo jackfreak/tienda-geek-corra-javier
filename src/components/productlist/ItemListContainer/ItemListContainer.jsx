@@ -6,11 +6,12 @@
 
 import './ItemListContainer.scss';
 
-import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { ItemList } from '../ItemList/ItemList';
 import { useEffect, useState } from 'react';
 import { loadProducts } from '../../../services/productsServices';
 import { useParams } from 'react-router-dom';
+import { Loader } from '../../ui/Loader/Loader';
 
 
 const ItemListContainer = () => {
@@ -69,9 +70,7 @@ const ItemListContainer = () => {
                 ?
                 <Row>
                     <Col className='item-list-container__cell'>
-                        <Spinner animation="border" role="status">
-                            <span className="visually-hidden">Cargando...</span>
-                        </Spinner>
+                        <Loader />
                     </Col>
                 </Row>
                 :

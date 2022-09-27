@@ -6,11 +6,11 @@
 
 import './CartItem.scss';
 import { Button, Card } from 'react-bootstrap';
-import { formatStringIntegerLocale } from '../../../helpers/stringHelpers';
+import { formatStringIntegerLocale } from '../../../utils/helpers/stringHelpers';
 import { Link } from 'react-router-dom';
 import { BsTrashFill } from 'react-icons/bs';
-import { useCartContext } from '../../../context/CartContext';
-import { AppRoute } from '../../../constants/AppRoute';
+import { useCartContext } from '../../../contexts/CartContext';
+import { AppRoute } from '../../../utils/constants/AppRoute';
 
 const CartItem = ({ item }) => {
     const { id, name, image, price, quantity } = item;
@@ -27,18 +27,21 @@ const CartItem = ({ item }) => {
 
                 <div className='cart-item__right'>
                     <div className='product-info'>
-                        <Link to={`${ AppRoute.Product }/${id}`} className='cart-item__view-item-btn cart-item__title'><h3>{name}</h3></Link>
+                        <Link to={`${AppRoute.Product}/${id}`} className='cart-item__view-item-btn cart-item__title'>
+                            <h3>{name}</h3>
+                        </Link>
 
-                        <Card.Text className='cart-item__qty'>Cantidad: { quantity }</Card.Text>
+                        <Card.Text className='cart-item__qty'>Cantidad: {quantity}</Card.Text>
                     </div>
 
                     <div className='product-pricing'>
                         <Card.Text className='cart-item__total-price'>${formatStringIntegerLocale(totalPrice)}</Card.Text>
 
-                        <Button className='btn btn-danger cart-item__btn-remove-item'
+                        <Button
+                            className='btn btn-danger cart-item__btn-remove-item'
                             onClick={() => {
                                 removeFromCart(id);
-                            } }>
+                            }}>
                             <span className='visually-hidden'>Eliminar del carrito</span>
                             <BsTrashFill />
                         </Button>
@@ -49,7 +52,4 @@ const CartItem = ({ item }) => {
     );
 };
 
-
-export {
-    CartItem
-}
+export { CartItem };

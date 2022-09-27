@@ -6,12 +6,12 @@
 
 import './BreadcrumbBar.scss';
 
-import useBreadcrumbs  from 'use-react-router-breadcrumbs';
+import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
 import { React } from 'react';
 import { Container } from 'react-bootstrap';
-import { capitalize } from '../../../helpers/stringHelpers';
-import { AppRoute } from '../../../constants/AppRoute';
+import { capitalize } from '../../../utils/helpers/stringHelpers';
+import { AppRoute } from '../../../utils/constants/AppRoute';
 //import { Breadcrumb } from 'react-bootstrap';
 
 /*
@@ -28,24 +28,27 @@ import { AppRoute } from '../../../constants/AppRoute';
 
 const DynamicItemBreadcrumb = ({ match }) => (
     // TODO: Get the name of the item
-    <span>{ capitalize(match.params.itemId) }</span>
+    <span>{capitalize(match.params.itemId)}</span>
 );
 
 const DynamicCategoryBreadcrumb = (data) => {
     //console.log('DynamicCategoryBreadcrumb', data);
     const { match } = data;
 
-    return (<span>{ capitalize( match.params.categoryId ) }</span>)
+    return <span>{capitalize(match.params.categoryId)}</span>;
     //return (<Link to={match.pathname} className=''>{ match.params.categoryId }</Link>);
 };
-
 
 // Define custom breadcrumbs for certain routes.
 // Breadcumbs can be components or strings.
 const routes = [
     {
-        path: '/',
-        breadcrumb: () => (<Link to='/' className=''>Inicio</Link>)
+        path: AppRoute.Root,
+        breadcrumb: () => (
+            <Link to={AppRoute.Root} className=''>
+                Inicio
+            </Link>
+        ),
     },
 
     {
@@ -74,29 +77,24 @@ const BreadcrumbBar = () => {
 
     return (
         <Container className='my-3'>
-            <nav aria-label="breadcrumb" className='breadcrumb-bar'>
-                <ol className="breadcrumb" style={{ '--bs-breadcrumb-divider': "'>'" }}>
-                    {
-                        breadcrumbs.map((data) => {
-                            //console.log(data);
+            <nav aria-label='breadcrumb' className='breadcrumb-bar'>
+                <ol className='breadcrumb' style={{ '--bs-breadcrumb-divider': "'>'" }}>
+                    {breadcrumbs.map((data) => {
+                        //console.log(data);
 
-                            const { match, breadcrumb } = data;
+                        const { match, breadcrumb } = data;
 
-                            return (
-                                <li className="breadcrumb-item" key={match.pathname}>
-                                    {/*<Link to={match.pathname} className=''>{breadcrumb}</Link>*/}
-                                    {breadcrumb}
-                                </li>
-                            )
-                        })
-                    }
+                        return (
+                            <li className='breadcrumb-item' key={match.pathname}>
+                                {/*<Link to={match.pathname} className=''>{breadcrumb}</Link>*/}
+                                {breadcrumb}
+                            </li>
+                        );
+                    })}
                 </ol>
             </nav>
         </Container>
     );
 };
 
-
-export {
-    BreadcrumbBar
-}
+export { BreadcrumbBar };

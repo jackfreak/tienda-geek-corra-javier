@@ -6,18 +6,7 @@
 
 import { db } from '../firebase/FirebaseConfig';
 import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
-
-
-const PRODUCTS_COLLECTION_NAME = 'products';
-
-
-/**
- *
- * @returns {CollectionReference}
- */
-function getProductsCollection() {
-    return collection(db, PRODUCTS_COLLECTION_NAME);
-}
+import { PRODUCTS_COLLECTION_NAME } from './helpers/collections.constants';
 
 
 /**
@@ -29,7 +18,7 @@ async function loadProducts(categoryId = null) {
     //console.warn('loadProducts');
 
     // Get a reference to the collection we want to use
-    const productsCollection = getProductsCollection();
+    const productsCollection = collection(db, PRODUCTS_COLLECTION_NAME);
 
     // Conditionally create the query
     const q = (categoryId === null)

@@ -7,21 +7,20 @@
 import './ItemDetail.scss';
 
 import { ItemCount } from '../ItemCount/ItemCount';
-import { formatStringIntegerLocale } from '../../../helpers/stringHelpers';
+import { formatStringIntegerLocale } from '../../../utils/helpers/stringHelpers';
 import { Button, Card } from 'react-bootstrap';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RichTextRenderer } from '../../misc/RichTextRenderer/RichTextRenderer';
-import { useCartContext } from '../../../context/CartContext';
-import { AppRoute } from '../../../constants/AppRoute';
+import { useCartContext } from '../../../contexts/CartContext';
+import { AppRoute } from '../../../utils/constants/AppRoute';
 
 /**
  * Initial Quantity
  */
 const INITIAL_QTY = 1;
 
-
-const ItemDetail = ({itemData = {}}) => {
+const ItemDetail = ({ itemData = {} }) => {
     const { id, name, description, image, price, stock } = itemData;
 
     const { addToCart, isInCart } = useCartContext();
@@ -30,7 +29,6 @@ const ItemDetail = ({itemData = {}}) => {
     //const [purchaseQty, setPurchaseQty] = useState(0);
 
     const navigate = useNavigate();
-
 
     const onAddToCart = (quantity) => {
         const newCartItem = {
@@ -50,44 +48,37 @@ const ItemDetail = ({itemData = {}}) => {
         navigate(AppRoute.Cart);
     };
 
-
     return (
         <Card className='item-detail card-smooth-shadow' data-item-id={id}>
             <Card.Body>
-                <div className="item-detail__top">
-                    <div className="item-detail__image">
+                <div className='item-detail__top'>
+                    <div className='item-detail__image'>
                         <img src={image} alt={name} />
                     </div>
 
-                    <div className="item-detail__data">
+                    <div className='item-detail__data'>
                         <h2 className='item-detail__name'>{name}</h2>
-                        <h3 className='item-detail__price'>$ { formatStringIntegerLocale(price) }</h3>
+                        <h3 className='item-detail__price'>$ {formatStringIntegerLocale(price)}</h3>
 
-                        <p className='item-detail__stock'>{stock} { (stock > 1) ? 'disponibles' : 'disponible' }</p>
+                        <p className='item-detail__stock'>
+                            {stock} {stock > 1 ? 'disponibles' : 'disponible'}
+                        </p>
 
                         {isInCart(id) && <p>El item ya esta agregado.</p>}
 
-                        {
-                            isInCart(id)
-                            ?
-                            <Button variant="dark"
-                                className="item-detail__btn-buy"
-                                onClick={ endPurchase }>
+                        {isInCart(id) ? (
+                            <Button variant='dark' className='item-detail__btn-buy' onClick={endPurchase}>
                                 Ver carrito
                             </Button>
-                            :
-                            <ItemCount
-                            stock={stock} initial={INITIAL_QTY}
-                            count={count}
-                            setCount={setCount}
-                            onAddToCart={onAddToCart} />
-                        }
+                        ) : (
+                            <ItemCount stock={stock} initial={INITIAL_QTY} count={count} setCount={setCount} onAddToCart={onAddToCart} />
+                        )}
                     </div>
                 </div>
 
-                <div className="item-detail__bottom">
-                    <div className="item-detail__description">
-                        <RichTextRenderer content={ description } />
+                <div className='item-detail__bottom'>
+                    <div className='item-detail__description'>
+                        <RichTextRenderer content={description} />
                     </div>
                 </div>
             </Card.Body>
@@ -95,7 +86,4 @@ const ItemDetail = ({itemData = {}}) => {
     );
 };
 
-
-export {
-    ItemDetail
-}
+export { ItemDetail };

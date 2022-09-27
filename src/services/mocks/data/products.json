@@ -5,7 +5,7 @@
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo</p> <p>En la hostil y caótica megalópolis de Neo-Tokyo, construida sobre las cenizas de una Tokio aniquilada por una explosión desconocida, Kaneda, Tetsuo y el resto de sus amigos deberán averiguar el enigma de Akira, el cual esconde el más escalofriante secreto científico.</p>",
         "image": "/images/products/akiravol011-240-0.jpg",
         "price": 4300,
-        "stock": 1,
+        "stock": 10,
         "categoryId": "manga"
     },
     {
@@ -14,7 +14,7 @@
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo</p> <p>En un caótico Neo-Tokio recién emergido de las cenizas de la III Guerra Mundial, Kaneda, Tetsuo y compañía se ven envueltos en el misterio de Akira, un extraño ser que en realidad es un proyecto científco secreto que debería hacer evolucionar a la raza humana.</p>",
         "image": "/images/products/akiravol021-240-0.jpg",
         "price": 4220,
-        "stock": 3,
+        "stock": 10,
         "categoryId": "manga"
     },
     {
@@ -23,7 +23,7 @@
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo.</p> <p>En un caótico Neo-Tokio recién emergido de las cenizas de la III Guerra Mundial, Kaneda, Tetsuo y compañía se ven envueltos en el misterio de Akira, un extraño ser que en realidad es un proyecto científco secreto que debería hacer evolucionar a la raza humana.</p>",
         "image": "/images/products/akiravol031-240-0.jpg",
         "price": 4090,
-        "stock": 1,
+        "stock": 10,
         "categoryId": "manga"
     },
     {
@@ -41,7 +41,7 @@
         "description": "<p><strong>Autor:</strong> Katsuhiro Otomo</p> <p>Neo-Tokio yace en ruinas. De los escombros ha surgido un imperio poblado por fanáticos que adoran y temen al poderoso Akira por igual. El mundo no está tomando la amenaza psíquica a la ligera y una fuerza militar global se está concentrando para enfrentarse al imperio. ¿Serán sufcientes para destruir a Akira y su primer ministro, Tetsuo, un trastornado adolescente con un inmenso poder que solo es comparable con su inmensa ambición?</p>",
         "image": "/images/products/akiravol051-240-0.jpg",
         "price": 4480,
-        "stock": 2,
+        "stock": 10,
         "categoryId": "manga"
     },
     {
@@ -59,7 +59,7 @@
         "description": "<p>Tras la terrible batalla contra los titanes, en especial contra el Titán Bestia, el Escuadrón de Reconocimiento llega a la casa natal de Eren, pero el secreto que se oculta en el sótano no es en absoluto lo que se esperaban.</p>",
         "image": "/images/products/aot_22_2da-edicion-cov1-240-0.jpg",
         "price": 1500,
-        "stock": 50,
+        "stock": 10,
         "categoryId": "manga"
     },
     {
@@ -68,7 +68,7 @@
         "description": "<p>Lo que debió haber sido un tranquilo viaje escolar se vuelveuna pesadilla cuando un tren lleno de estudiantes descarrila dentro de un túnel.</p>",
         "image": "/images/products/dragon_head_1_sobrecubierta1-240-0.jpg",
         "price": 1650,
-        "stock": 0,
+        "stock": 10,
         "categoryId": "manga"
     },
     {
@@ -77,7 +77,7 @@
         "description": "<p>La aracnofobia ha tomado la ofensiva y extiende la locura de los Kishin por todo el mundo, amenazando a cualquiera que se interponga en su camino.</p>",
         "image": "/images/products/soul-eater-11-cover1-240-0.jpg",
         "price": 990,
-        "stock": 15,
+        "stock": 10,
         "categoryId": "manga"
     },
     {
@@ -86,7 +86,7 @@
         "description": "<p>Una de las novelas gráficas más populares y aclamadas por la crítica de todos los tiempos, la galardonada obra maestra de Neil Gaiman, SANDMAN, estableció el estándar para la fantasía lírica y madura en la era moderna de los cómics.</p>",
         "image": "/images/products/sandman_cov_arg1-240-0.jpg",
         "price": 3040,
-        "stock": 6,
+        "stock": 10,
         "categoryId": "comics"
     },
     {

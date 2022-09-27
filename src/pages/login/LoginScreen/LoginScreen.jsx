@@ -4,31 +4,23 @@
  * @author Javier Alejandro Corra
  */
 
-import { useState } from 'react';
-import { useLoginContext } from '../../../context/LoginContext';
 import './LoginScreen.scss';
-
+import { useLoginContext } from '../../../contexts/LoginContext';
+import { useForm } from '../../../hooks/useForm';
 
 const LoginScreen = () => {
-    const { login } = useLoginContext;
+    const { login } = useLoginContext();
 
-    const [user, setUser] = useState({
+    const { formData, handleInputChange } = useForm({
         email: '',
-        password: ''
+        password: '',
     });
-
-    const handleInputChange = (e) => {
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value
-        });
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('submit');
 
-        login(user.email, user.pass);
+        login(formData.email, formData.password);
     };
 
     return (
@@ -36,7 +28,9 @@ const LoginScreen = () => {
             <div className='login-screen'>
                 <form onSubmit={handleSubmit}>
                     <div className='mb-3'>
-                        <label htmlFor='emailInput' className='form-label'>E-mail</label>
+                        <label htmlFor='emailInput' className='form-label'>
+                            E-mail
+                        </label>
                         <input
                             type='email'
                             name='email'
@@ -44,31 +38,33 @@ const LoginScreen = () => {
                             className='form-control'
                             autoComplete='email'
                             placeholder='email@email.com'
+                            value={formData.email}
                             onChange={handleInputChange}
                         />
                     </div>
 
                     <div className='mb-3'>
-                        <label htmlFor='passwordInput' className='form-label'>Password</label>
+                        <label htmlFor='passwordInput' className='form-label'>
+                            Password
+                        </label>
                         <input
                             type='password'
                             name='password'
                             id='passwordInput'
                             className='form-control'
                             autoComplete='current-password'
+                            value={formData.password}
                             onChange={handleInputChange}
                         />
                     </div>
 
-                    <button type='submit' className='btn btn-primary'>Enviar</button>
+                    <button type='submit' className='btn btn-primary'>
+                        Enviar
+                    </button>
                 </form>
             </div>
-
         </section>
     );
 };
 
-
-export {
-    LoginScreen
-}
+export { LoginScreen };

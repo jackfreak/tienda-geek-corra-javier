@@ -11,6 +11,7 @@ const AppRoute = {
     Product: '/producto',
 
     Cart: '/carrito',
+    Checkout: '/checkout',
     Contact: '/contacto',
 
     Login: '/ingresar',
@@ -25,7 +26,4 @@ const AppRoute = {
     //RegretButton: '/boton-de-arrepentimiento',
 };
 
-
-export {
-    AppRoute
-}
+export { AppRoute };

@@ -8,8 +8,9 @@ import './ItemDetailContainer.scss';
 import { useEffect, useState } from 'react';
 import { loadProductDetail } from '../../../services/productsServices';
 import { ItemDetail } from "../ItemDetail/ItemDetail";
-import { Container, Spinner } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { Loader } from '../../ui/Loader/Loader';
 
 const ItemDetailContainer = () => {
 
@@ -42,9 +43,7 @@ const ItemDetailContainer = () => {
                 (loading)
                 ?
                 <div className='item-detail-container__cell'>
-                    <Spinner animation="border" role="status">
-                        <span className="visually-hidden">Cargando...</span>
-                    </Spinner>
+                    <Loader />
                 </div>
                 :
                 <ItemDetail itemData={item} />
