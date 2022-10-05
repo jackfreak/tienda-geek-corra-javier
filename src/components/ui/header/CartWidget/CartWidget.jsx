@@ -6,9 +6,9 @@
 
 import './CartWidget.scss';
 import { Link } from 'react-router-dom';
-import { useCartContext } from '../../../contexts/CartContext';
+import { useCartContext } from '../../../../contexts/CartContext';
 import { BsCart2 } from 'react-icons/bs';
-import { AppRoute } from '../../../utils/constants/AppRoute';
+import { AppRoute } from '../../../../utils/constants/AppRoute';
 
 const CartWidget = () => {
     const { getCartQuantity } = useCartContext();

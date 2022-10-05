@@ -3,6 +3,11 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/variables";
 
-.contact-container {
+
+.newsletter-suscription {
     position: relative;
+
+    .form-text {
+        font-size: .8em;
+    }
 }

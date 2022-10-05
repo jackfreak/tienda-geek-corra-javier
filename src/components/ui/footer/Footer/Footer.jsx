@@ -7,15 +7,10 @@
 import './Footer.scss';
 import { FOOTER_IMAGES as IMGS } from './FOOTER_IMAGES';
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs';
+import { NewsletterSuscription } from '../NewsletterSuscription/NewsletterSuscription';
 
 
 const Footer = () => {
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-
-        // TODO
-    };
 
     return (
         <footer className='main-footer'>
@@ -23,20 +18,7 @@ const Footer = () => {
                 <div className='container main-footer__links'>
                     <div className='row'>
                         <div className='col-md-4'>
-                            <div className='newsletter'>
-                                <h3>NEWSLETTER</h3>
-                                <div className='main-footer__box'>
-                                    <form action=''>
-                                        <div className='mb-3'>
-                                            <label htmlFor='inputEmail' className='form-label'>Email</label>
-                                            <input type='email' className='form-control' id='inputEmail' aria-describedby='emailHelp' />
-                                            <div id='emailHelp' className='form-text'>Recibí las últimas novedades en tu correo</div>
-                                        </div>
-
-                                        <button type='submit' className='btn btn-primary' onClick={ onSubmit }>Suscribirse</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <NewsletterSuscription />
                         </div>
 
                         <div className='col-md-4'>

@@ -8,12 +8,16 @@ import './Checkout.scss';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useCartContext } from '../../../contexts/CartContext';
-import { useForm } from '../../../hooks/useForm';
 import { sendPurchaseOrder } from '../../../services/purchaseOrderServices';
 import { AppRoute } from '../../../utils/constants/AppRoute';
 import { PurchaseResult } from '../PurchaseResult/PurchaseResult';
 import { StatusCode } from '../../../services/helpers/statusCodes.constants';
 import { Loader } from '../../../components/ui/Loader/Loader';
+import { Form, Formik } from 'formik';
+import { TextInputField } from '../../../utils/forms/fields/TextInputField';
+import { EmailInputField } from '../../../utils/forms/fields/EmailInputField';
+import { getEmailSchema, getNameSchema } from '../../../utils/forms/formValidationRules';
+import { object } from 'yup';
 
 
 const Checkout = () => {
@@ -30,43 +34,28 @@ const Checkout = () => {
     address: 'Siempreviva 1234',
     */
 
-    const { formData, handleInputChange } = useForm({
+    const initialValues = {
         name: '',
         lastname: '',
         email: '',
         address: '',
+    };
+
+    const validationSchema = object({
+        name: getNameSchema(),
+        lastname: getNameSchema(),
+        address: getNameSchema(),
+        email: getEmailSchema(),
     });
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
+    const onSubmit = async (values, { setSubmitting }) => {
+        console.log(values);
         const po = {
-            buyerInfo: formData,
+            buyerInfo: values,
             items: cart,
             created: '', // NOTE: This value will be overwritten by the service
             total: getCartTotalPrice(),
         };
-
-        // TODO: IMPROVE FORM VALIDATION
-        if (formData.name.length < 2) {
-            alert('Nombre invalido');
-            return;
-        }
-
-        if (formData.lastname.length < 2) {
-            alert('Apellido invalido');
-            return;
-        }
-
-        if (formData.email.length === 0) {
-            alert('Email invalido');
-            return;
-        }
-
-        if (formData.address.length < 2) {
-            alert('Direccion invalida');
-            return;
-        }
 
         setLoading(true);
 
@@ -80,6 +69,14 @@ const Checkout = () => {
         if (poResult.status === StatusCode.SUCCESS) {
             emptyCart();
         }
+
+        // Emulate an asyc call to a service
+        /*
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+        }, 2000);
+        */
     };
 
     // This use case must go first, because when the purchase is successful the cart emptied.
@@ -100,82 +97,26 @@ const Checkout = () => {
 
             {
                 loading
-                    ?
-                    <div className='d-flex justify-content-center'>
-                        <Loader />
-                    </div>
-                    :
-                <form onSubmit={handleSubmit}>
-                <div className='mb-3'>
-                    <label htmlFor='nameInput' className='form-label'>
-                        Nombre
-                    </label>
-                    <input
-                        type='text'
-                        name='name'
-                        id='nameInput'
-                        className='form-control'
-                        autoComplete='name'
-                        placeholder=''
-                        value={formData.name}
-                        onChange={handleInputChange} />
+                ?
+                <div className='d-flex justify-content-center'>
+                    <Loader />
                 </div>
+                :
+                <Formik
+                    initialValues={ initialValues }
+                    validationSchema={ validationSchema }
+                    onSubmit={ onSubmit }
+                >
+                    <Form noValidate>
+                        <TextInputField id='checkoutNameInput' name='name' label='Nombre' />
+                        <TextInputField id='checkoutLastNameInput' name='lastname' label='Apellido' />
+                        <TextInputField id='checkoutAddressInput' name='address' label='Dirección'/>
+                        <EmailInputField id='contactEmailInput' name='email' label='Email'/>
 
-                <div className='mb-3'>
-                    <label htmlFor='lastNameInput' className='form-label'>
-                        Apellido
-                    </label>
-                    <input
-                        type='text'
-                        name='lastname'
-                        id='lastNameInput'
-                        className='form-control'
-                        autoComplete='lastname'
-                        placeholder=''
-                        value={formData.lastname}
-                        onChange={handleInputChange}
-                    />
-                </div>
-
-                <div className='mb-3'>
-                    <label htmlFor='emailInput' className='form-label'>
-                        E-mail
-                    </label>
-                    <input
-                        type='email'
-                        name='email'
-                        id='emailInput'
-                        className='form-control'
-                        autoComplete='email'
-                        placeholder='email@email.com'
-                        value={formData.email}
-                        onChange={handleInputChange}
-                    />
-                </div>
-
-                <div className='mb-3'>
-                    <label htmlFor='addressInput' className='form-label'>
-                        Dirección
-                    </label>
-                    <input
-                        type='text'
-                        name='address'
-                        id='addressInput'
-                        className='form-control'
-                        autoComplete='address'
-                        placeholder=''
-                        value={formData.address}
-                        onChange={handleInputChange}
-                    />
-                </div>
-
-                <button type='submit' className='btn btn-primary'>
-                    Enviar
-                </button>
-            </form>
+                        <button type='submit' className='btn btn-primary'>Enviar</button>
+                    </Form>
+                </Formik>
             }
-
-
         </section>
     );
 };

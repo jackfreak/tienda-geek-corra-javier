@@ -4,7 +4,7 @@
  * @author Javier Alejandro Corra
  */
 
-//import './Home.scss';
+import './Home.scss';
 
 
 const Home = () => {

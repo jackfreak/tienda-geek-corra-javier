@@ -8,14 +8,14 @@ import './App.scss';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Header } from './components/header/Header/Header';
+import { Header } from './components/ui/header/Header/Header';
 import { HeroBanner } from './pages/home/HeroBanner/HeroBanner';
 import { ItemListContainer } from './components/productlist/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/productdetail/ItemDetailContainer/ItemDetailContainer';
 import { ContactContainer } from './pages/contact/ContactContainer';
 import { Error404 } from './components/misc/Error404/Error404';
 import { BreadcrumbBar } from './components/misc/BreadcrumbBar/BreadcrumbBar';
-import { Footer } from './components/footer/Footer/Footer';
+import { Footer } from './components/ui/footer/Footer/Footer';
 import { CartContainer } from './pages/cart/CartContainer/CartContainer';
 import { AppRoute } from './utils/constants/AppRoute';
 import { CartProvider } from './contexts/CartContext';

@@ -5,14 +5,14 @@
  */
 
 import './NavBar.scss';
-import logoTiendaGeek from '../../../assets/images/logo-tienda-geek.svg';
+import logoTiendaGeek from '../../../../assets/images/logo-tienda-geek.svg';
 
 import { Container, Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import { CartWidget } from '../CartWidget/CartWidget';
-import { AppRoute } from '../../../utils/constants/AppRoute';
-import { useLoginContext } from '../../../contexts/LoginContext';
+import { AppRoute } from '../../../../utils/constants/AppRoute';
+import { useLoginContext } from '../../../../contexts/LoginContext';
 
 const NavBar = () => {
     const { user } = useLoginContext();
