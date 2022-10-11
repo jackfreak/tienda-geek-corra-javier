@@ -6,7 +6,7 @@
 
 
 import { writeBatch, doc, collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase/FirebaseConfig';
+import { firestoreDB } from '../firebase/FirebaseConfig';
 import products from './mocks/data/products.json';
 import { PRODUCTS_COLLECTION_NAME } from './helpers/collections.constants';
 
@@ -19,7 +19,7 @@ async function createProducts() {
     console.log('createProducts');
 
     // Get a new write batch
-    const batch = writeBatch(db);
+    const batch = writeBatch(firestoreDB);
 
     products.forEach((item, index) => {
         // Custom id
@@ -31,7 +31,7 @@ async function createProducts() {
         console.log(id, item);
 
         // Create a doc reference using our custom id
-        const docRef = doc(db, PRODUCTS_COLLECTION_NAME, id);
+        const docRef = doc(firestoreDB, PRODUCTS_COLLECTION_NAME, id);
 
         batch.set(docRef, item);
     });
@@ -53,10 +53,10 @@ async function resetStock() {
     const STOCK_VALUE = 10;
 
     // Get a new write batch
-    const batch = writeBatch(db);
+    const batch = writeBatch(firestoreDB);
 
     // Get a reference to the Products collection
-    const productsRef = collection(db, PRODUCTS_COLLECTION_NAME);
+    const productsRef = collection(firestoreDB, PRODUCTS_COLLECTION_NAME);
 
     // Get all the products
     const productsDocs = await getDocs(productsRef);

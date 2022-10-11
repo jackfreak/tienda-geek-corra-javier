@@ -7,22 +7,47 @@
 import './NavBar.scss';
 import logoTiendaGeek from '../../../../assets/images/logo-tienda-geek.svg';
 
-import { Container, Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
-import { NavLink, Link } from 'react-router-dom';
-import { BsSearch } from 'react-icons/bs';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
+//import { BsSearch } from 'react-icons/bs';
 import { CartWidget } from '../CartWidget/CartWidget';
 import { AppRoute } from '../../../../utils/constants/AppRoute';
-import { useLoginContext } from '../../../../contexts/LoginContext';
+import { useAuthContext } from '../../../../contexts/AuthContext';
+
+
+/*
+    <Nav.Item>
+        <Button variant='outline-dark'>
+            <BsSearch />
+            <span className='visually-hidden'>Buscar</span>
+        </Button>
+    </Nav.Item>
+*/
 
 const NavBar = () => {
-    const { user } = useLoginContext();
+    const { user, logout } = useAuthContext();
+
+    const navigate = useNavigate();
+
+    const handleLogout = async (e) => {
+        console.log('logout');
+
+        try {
+            await logout();
+
+            navigate(AppRoute.Home);
+
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     return (
         <Navbar collapseOnSelect expand='lg' className='main-nav-bar'>
             <Container>
                 <h1 className='visually-hidden'>Tienda Geek</h1>
 
-                <Link to={AppRoute.Root} title='Tienda Geek' className='navbar-brand'>
+                <Link to={AppRoute.Home} title='Tienda Geek' className='navbar-brand'>
                     <img src={logoTiendaGeek} className='logo-tienda' alt='Logo Tienda Geek' />
                 </Link>
 
@@ -62,7 +87,7 @@ const NavBar = () => {
                         </Nav.Item>
 
                         {
-                            user.isLogged &&
+                            (user) &&
                             <Nav.Item as='li'>
                                 <NavLink to={AppRoute.AdminPanel} className='nav-link'>
                                     <strong>ADMIN PANEL</strong>
@@ -71,20 +96,30 @@ const NavBar = () => {
                         }
 
                         <NavDropdown title='Mi Cuenta' menuVariant='light' as='li' id='nav-dropdown-my-account'>
-                            <NavDropdown.Item as={Link} to={AppRoute.Registration}>
-                                Crear Cuenta
-                            </NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={AppRoute.Login}>
-                                Iniciar sesión
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                            {
+                                (user)
+                                    ?
+                                    <>
+                                        <NavDropdown.Item as={Link} to={AppRoute.UserProfile}>
+                                            Mi Cuenta
+                                        </NavDropdown.Item>
 
-                        <Nav.Item>
-                            <Button variant='outline-dark'>
-                                <BsSearch />
-                                <span className='visually-hidden'>Buscar</span>
-                            </Button>
-                        </Nav.Item>
+                                        <NavDropdown.Item onClick={handleLogout}>
+                                            Salir
+                                        </NavDropdown.Item>
+                                    </>
+                                    :
+                                    <>
+                                        <NavDropdown.Item as={Link} to={AppRoute.Registration}>
+                                            Crear Cuenta
+                                        </NavDropdown.Item>
+
+                                        <NavDropdown.Item as={Link} to={AppRoute.Login}>
+                                            Iniciar sesión
+                                        </NavDropdown.Item>
+                                    </>
+                            }
+                        </NavDropdown>
 
                         <Nav.Item>
                             <CartWidget />

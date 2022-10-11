@@ -1,11 +1,12 @@
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/_mixins.scss";
+@use '/src/styles/variables/variables' as vars;
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/variables';
 
 .item-list-container {
     position: relative;
 
-    background-color: $white;
+    background-color: vars.$white;
 
     //text-align: center;
 

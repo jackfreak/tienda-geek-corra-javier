@@ -4,7 +4,7 @@
  * @author Javier Alejandro Corra
  */
 
-import { db } from '../firebase/FirebaseConfig';
+import { firestoreDB } from '../firebase/FirebaseConfig';
 import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 import { PRODUCTS_COLLECTION_NAME } from './helpers/collections.constants';
 
@@ -18,7 +18,7 @@ async function loadProducts(categoryId = null) {
     //console.warn('loadProducts');
 
     // Get a reference to the collection we want to use
-    const productsCollection = collection(db, PRODUCTS_COLLECTION_NAME);
+    const productsCollection = collection(firestoreDB, PRODUCTS_COLLECTION_NAME);
 
     // Conditionally create the query
     const q = (categoryId === null)
@@ -52,7 +52,7 @@ async function loadProductDetail(productId) {
     //console.warn('loadProductDetail', productId);
 
     // Get a reference to the document we want to use
-    const productDoc = doc(db, PRODUCTS_COLLECTION_NAME, productId);
+    const productDoc = doc(firestoreDB, PRODUCTS_COLLECTION_NAME, productId);
 
     // getDoc returns a Promise
     const docSnapshot = await getDoc(productDoc);

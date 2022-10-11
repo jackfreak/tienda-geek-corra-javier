@@ -1,0 +1,10 @@
+{
+    "MSG_REQUIRED": "Campo requerido.",
+    "MSG_INVALID_EMAIL": "Mail inválido.",
+    "MSG_MINIMUM": "El campo debe contener mas de ${min} caracteres.",
+    "MSG_MAXIMUM": "El campo debe contener como máximo ${max} caracteres.",
+    "MSG_PHONE_MINIMUM": "El número debe contener como mínimo ${min} digitos.",
+    "MSG_PHONE_MAXIMUM": "El número debe contener como máximo ${max} digitos.",
+    "MSG_PASSWORD_TOO_SHORT": "La contraseña debe ser de al menos ${min} caracteres.",
+    "MSG_PASSWORD_FORMAT": "La contraseña solo puede contener caracteres a-z, A-Z y 0-9."
+}

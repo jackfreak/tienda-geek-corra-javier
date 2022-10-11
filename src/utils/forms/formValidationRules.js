@@ -4,22 +4,13 @@
  */
 
 import { string } from "yup";
-
+import errorMessages from "./errorMessages.json";
 
 //------------------------------------------------------------------------------------------------------------------
 // ::: CONSTANTS
 //------------------------------------------------------------------------------------------------------------------
 
-const MSG_REQUIRED = 'Campo requerido.';
-
-// eslint-disable-next-line
-const MSG_MINIMUM = 'El campo debe contener mas de ${min} caracteres.';
-// eslint-disable-next-line
-const MSG_MAXIMUM = 'El campo debe contener como máximo ${max} caracteres.';
-// eslint-disable-next-line
-const MSG_PHONE_MINIMUM = 'El número debe contener como mínimo ${min} digitos.';
-// eslint-disable-next-line
-const MSG_PHONE_MAXIMUM = 'El número debe contener como máximo ${max} digitos.';
+const Locale = errorMessages;
 
 
 //------------------------------------------------------------------------------------------------------------------
@@ -38,19 +29,42 @@ const MSG_PHONE_MAXIMUM = 'El número debe contener como máximo ${max} digitos.
 
 
 function getEmailSchema() {
-    return string().email('Mail inválido').required(MSG_REQUIRED);
+    return string()
+        .email(Locale.MSG_INVALID_EMAIL)
+        .required(Locale.MSG_REQUIRED);
 }
 
-function getNameSchema() {
-    return string().min(2, MSG_MINIMUM).max(15, MSG_MAXIMUM).required(MSG_REQUIRED);
+function getPasswordSchema() {
+    return string()
+        .min(6, Locale.MSG_PASSWORD_TOO_SHORT)
+        .matches(/[a-zA-Z0-9]/, Locale.MSG_PASSWORD_FORMAT)
+        .required(Locale.MSG_REQUIRED);
+}
+
+function getNameSchema(min = 2, max = 20) {
+    return string()
+        .min(min, Locale.MSG_MINIMUM)
+        .max(max, Locale.MSG_MAXIMUM)
+        .required(Locale.MSG_REQUIRED);
+}
+
+function getAddressSchema(min = 2, max = 50) {
+    return string()
+        .min(min, Locale.MSG_MINIMUM)
+        .max(max, Locale.MSG_MAXIMUM)
+        .required(Locale.MSG_REQUIRED);
 }
 
 function getPhoneSchema() {
-    return string().min(2, MSG_PHONE_MINIMUM).max(13, MSG_PHONE_MAXIMUM);
+    return string()
+        .min(2, Locale.MSG_PHONE_MINIMUM)
+        .max(13, Locale.MSG_PHONE_MAXIMUM);
 }
 
-function getMessageSchema(max=100) {
-    return string().max(max, MSG_MAXIMUM).required(MSG_REQUIRED);
+function getMessageSchema(max = 100) {
+    return string()
+        .max(max, Locale.MSG_MAXIMUM)
+        .required(Locale.MSG_REQUIRED);
 }
 
 
@@ -62,7 +76,9 @@ function getMessageSchema(max=100) {
 
 export {
     getEmailSchema,
+    getPasswordSchema,
     getNameSchema,
+    getAddressSchema,
     getPhoneSchema,
     getMessageSchema,
 };

@@ -1,7 +1,9 @@
 /**
- * AdminPanel component.
- * An Admin panel that grants permission to an administrator user to perform
- * predefined actions in the Firestore database.
+ * AdminPanel container component.
+ *
+ * The Admin Panel that grants permission to a user with admin role,
+ * to perform predefined actions in the Firestore database.
+ *
  * For example:
  * + Restore the stock of all the products.
  * + Create and/or upload a new products collection from a local JSON file.
@@ -11,8 +13,8 @@
 
 import './AdminPanel.scss';
 
-import { Button, Container, Modal } from 'react-bootstrap';
-import { useLoginContext } from '../../../contexts/LoginContext';
+import { Button, Modal } from 'react-bootstrap';
+import { useAuthContext } from '../../../contexts/AuthContext';
 import { Navigate } from 'react-router-dom';
 import { AppRoute } from '../../../utils/constants/AppRoute';
 import { resetStock } from '../../../services/uploadProductsService';
@@ -20,7 +22,7 @@ import { useState } from 'react';
 
 
 const AdminPanel = () => {
-    const { user } = useLoginContext();
+    const { user } = useAuthContext();
 
     const [showModal, setShowModal] = useState(false);
     //const [loading, setLoading] = useState(false);
@@ -45,8 +47,6 @@ const AdminPanel = () => {
     const handleResetStockConfirmation = async (e) => {
         // TODO: iMPLEMENTATION AND POPUP WARNING MESSAGE
 
-
-
         //setLoading(true);
         await resetStock();
         //setLoading(false);
@@ -56,46 +56,42 @@ const AdminPanel = () => {
         alert('Stock reset SUCCESSFUL');
     };
 
+    if (!user) {
+        return (<Navigate to={AppRoute.Login} />);
+    }
 
     return (
-        <>
-            {user.isLogged ? (
-                <Container>
-                    <h2>Admin Panel</h2>
-                    {/* <Button onClick={createProducts}>CREATE PRODUCTS</Button> */}
+        <section className='admin-panel'>
+            <h2>Admin Panel</h2>
+            {/* <Button onClick={createProducts}>CREATE PRODUCTS</Button> */}
 
-                    <p>Reset the stock of all the products to a value of <strong>10</strong> each.</p>
-                    <Button variant='danger' onClick={handleResetStock}>
-                        RESET STOCK
-                    </Button>
+            <p>Reset the stock of all the products to a value of <strong>10</strong> each.</p>
+            <Button variant='danger' onClick={handleResetStock}>
+                RESET STOCK
+            </Button>
 
-                    <Modal
-                        size="md"
-                        aria-labelledby="contained-modal-title-vcenter"
-                        centered
-                        show={showModal}
-                        onHide={handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title id="contained-modal-title-vcenter">
-                                WARNING
-                            </Modal.Title>
-                        </Modal.Header>
+            <Modal
+                size="md"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={showModal}
+                onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        WARNING
+                    </Modal.Title>
+                </Modal.Header>
 
-                        <Modal.Body>
-                            <h5>Are you sure you want to reset the stock?</h5>
-                        </Modal.Body>
+                <Modal.Body>
+                    <h5>Are you sure you want to reset the stock?</h5>
+                </Modal.Body>
 
-                        <Modal.Footer>
-                            <Button onClick={ handleClose }>No</Button>
-                            <Button variant='danger' onClick={ handleResetStockConfirmation }>Yes</Button>
-                        </Modal.Footer>
-                    </Modal>
-
-                </Container>
-            ) : (
-                <Navigate to={AppRoute.Login} />
-            )}
-        </>
+                <Modal.Footer>
+                    <Button onClick={handleClose}>No</Button>
+                    <Button variant='danger' onClick={handleResetStockConfirmation}>Yes</Button>
+                </Modal.Footer>
+            </Modal>
+        </section>
     );
 };
 

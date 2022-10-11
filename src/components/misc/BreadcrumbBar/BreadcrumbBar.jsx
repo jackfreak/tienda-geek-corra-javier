@@ -43,9 +43,9 @@ const DynamicCategoryBreadcrumb = (data) => {
 // Breadcumbs can be components or strings.
 const routes = [
     {
-        path: AppRoute.Root,
+        path: AppRoute.Home,
         breadcrumb: () => (
-            <Link to={AppRoute.Root} className=''>
+            <Link to={AppRoute.Home} className=''>
                 Inicio
             </Link>
         ),

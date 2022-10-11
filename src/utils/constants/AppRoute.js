@@ -5,7 +5,7 @@
  */
 
 const AppRoute = {
-    Root: '/',
+    Home: '/',
 
     Category: '/categoria',
     Product: '/producto',
@@ -16,6 +16,7 @@ const AppRoute = {
 
     Login: '/ingresar',
     Registration: '/registracion',
+    UserProfile: '/mi-cuenta',
     AdminPanel: '/admin',
 
     // FOOTER LINKS

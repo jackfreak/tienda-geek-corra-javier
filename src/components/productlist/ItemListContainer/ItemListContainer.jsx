@@ -1,5 +1,5 @@
 /**
- * ItemListContainer component.
+ * ItemListContainer container component.
  *
  * @author Javier Alejandro Corra
  */
@@ -49,32 +49,36 @@ const ItemListContainer = () => {
         setLoading(true);
 
         loadProducts(categoryId)
-        .then((result) => {
-            setProducts(result);
-        })
-        .catch((err) => {
-            console.error(err);
-        })
-        .finally(() => {
-            setLoading(false);
-        });
+            .then((result) => {
+                setProducts(result);
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, [categoryId]);
 
 
     return (
         <Container className='item-list-container' as='section'>
-            <Row><Col><h2 className='item-list-container__title'>{ getTitle(categoryId) }</h2></Col></Row>
+            <Row>
+                <Col>
+                    <h2 className='item-list-container__title'>{getTitle(categoryId)}</h2>
+                </Col>
+            </Row>
 
             {
                 (loading)
-                ?
-                <Row>
-                    <Col className='item-list-container__cell'>
-                        <Loader />
-                    </Col>
-                </Row>
-                :
-                <ItemList items={products} />
+                    ?
+                    <Row>
+                        <Col className='item-list-container__cell'>
+                            <Loader />
+                        </Col>
+                    </Row>
+                    :
+                    <ItemList items={products} />
             }
 
         </Container>

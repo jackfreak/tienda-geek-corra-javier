@@ -4,16 +4,14 @@
  * @author Javier Alejandro Corra
  */
 
-import { Container } from "react-bootstrap";
-
-//import './Error404.scss';
+import './Error404.scss';
 
 
 const Error404 = () => {
     return (
-        <Container>
+        <section className='error404'>
             <h1>ERROR: PÁGINA NO ENCONTRADA</h1>
-        </Container>
+        </section>
     );
 };
 

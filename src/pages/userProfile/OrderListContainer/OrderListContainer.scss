@@ -1,0 +1,31 @@
+@use "/src/styles/variables/variables" as vars;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+.order-list-container {
+    position: relative;
+
+    background-color: $white;
+
+    //text-align: center;
+
+    //padding: 2em 0;
+
+    margin-top: 2rem;
+
+    &__title {
+        text-align: left;
+
+        margin: 0 0 .5em;
+    }
+
+    &__cell {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        //min-height: 12em;
+    }
+}

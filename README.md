@@ -27,6 +27,10 @@ Otra área que me interesa es la Accesibilidad, y a medida que me vaya sintiendo
 
 El orden, la prolijidad, la claridad del código y una documentación son elementos fundamentales en todo desarrollo escalable por lo que intentare -dentro del tiempo qe disponga- de mantener esos standares para las entregas importantes.
 
+## Comentarios
+
+- La categoria "accesorios" no contiene productos. Esto no es un error, es a propósito para ejemplificar y testear el caso de uso donde una categoria de productos se queda temporalmente sin productos dados de alta en el backend. Si a nivel negocio se prevee que dicha categoría no volverá a tener productos cargados, la categoría debería ser dada de baja y elmininada del menú.
+
 ## Nuevas Dependencias
 
 -   [React Bootstrap](https://react-bootstrap.github.io/)

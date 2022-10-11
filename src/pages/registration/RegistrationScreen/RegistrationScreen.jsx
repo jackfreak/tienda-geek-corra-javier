@@ -1,10 +1,10 @@
 /**
- * LoginScreen container component.
+ * RegistrationScreen container component.
  *
  * @author Javier Alejandro Corra
  */
 
-import './LoginScreen.scss';
+import './RegistrationScreen.scss';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import { Form, Formik } from 'formik';
 import { EmailInputField } from '../../../utils/forms/fields/EmailInputField';
@@ -16,14 +16,14 @@ import { Navigate } from 'react-router-dom';
 import { AppRoute } from '../../../utils/constants/AppRoute';
 
 
-const loginSchema = object({
+const registrationSchema = object({
     email: getEmailSchema(),
     password: getPasswordSchema(),
 });
 
 
-const LoginScreen = () => {
-    const { user, login } = useAuthContext();
+const RegistrationScreen = () => {
+    const { user, signup } = useAuthContext();
     const [formError, setFormError] = useState(null);
     //const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ const LoginScreen = () => {
         setFormError(null);
 
         try {
-            await login(values.email, values.password);
+            await signup(values.email, values.password);
 
             // Call setSubmitting(false) to finish the cycle
             setSubmitting(false);
@@ -56,8 +56,8 @@ const LoginScreen = () => {
     }
 
     return (
-        <section className='login-screen'>
-            <h2>Iniciar sesión</h2>
+        <section className='registration-screen'>
+            <h2>Crear Cuenta</h2>
 
             {(formError !== null) &&
                 <div className='alert alert-danger' role="alert">
@@ -71,7 +71,7 @@ const LoginScreen = () => {
                     email: '',
                     password: '',
                 }}
-                validationSchema={loginSchema}
+                validationSchema={registrationSchema}
                 onSubmit={onSubmit}
             >
                 {({ isSubmitting }) => (
@@ -83,14 +83,16 @@ const LoginScreen = () => {
                             label='Contraseña'
                             type='password'
                             autoComplete='current-password'
-                        />
+                            aria-describedby='passwordHelpInline'>
+                            <p id='passwordHelpInline' className='form-text'>La contraseña debe contener 6 caracteres como mínimo.</p>
+                        </TextInputField>
 
                         <button
                             type='submit'
                             className='btn btn-primary'
                             disabled={isSubmitting}
                         >
-                            Ingresar
+                            Crear Cuenta
                         </button>
                     </Form>
                 )}
@@ -99,4 +101,4 @@ const LoginScreen = () => {
     );
 };
 
-export { LoginScreen };
+export { RegistrationScreen };

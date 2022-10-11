@@ -1,0 +1,24 @@
+@use "/src/styles/variables/variables" as vars;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+.user-profile-screen {
+    position: relative;
+
+    width: 100%;
+
+    /*
+    @include media-breakpoint-up(lg) {
+        width: 33em;
+    }
+    */
+
+
+    .user-profile {
+        &__name {
+            font-size: 1.5rem;
+            font-weight: vars.$font-weight-bold;
+        }
+    }
+}

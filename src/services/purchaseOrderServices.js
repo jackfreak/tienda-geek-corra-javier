@@ -4,7 +4,7 @@
  * @author Javier Alejandro Corra
  */
 
-import { db } from '../firebase/FirebaseConfig';
+import { firestoreDB } from '../firebase/FirebaseConfig';
 import { collection, serverTimestamp, writeBatch, query, where, documentId, getDocs, doc } from 'firebase/firestore';
 import { PRODUCTS_COLLECTION_NAME, PURCHASE_ORDER_COLLECTION_NAME } from './helpers/collections.constants';
 import { StatusCode } from './helpers/statusCodes.constants';
@@ -21,17 +21,17 @@ async function sendPurchaseOrder(cart, poData) {
     //console.log('purchaseOrderServices::sendPurchaseOrder');
 
     // Add creation time using server-side timestamp.
-    poData.created = serverTimestamp();
+    poData.createdAt = serverTimestamp();
     //console.log(poData);
 
     // Get a new write batch
-    const batch = writeBatch(db);
+    const batch = writeBatch(firestoreDB);
 
     // Get a reference to the Purchase Order collection
-    const poRef = collection(db, PURCHASE_ORDER_COLLECTION_NAME);
+    const poRef = collection(firestoreDB, PURCHASE_ORDER_COLLECTION_NAME);
 
     // Get a reference to the Products collection
-    const productsRef = collection(db, PRODUCTS_COLLECTION_NAME);
+    const productsRef = collection(firestoreDB, PRODUCTS_COLLECTION_NAME);
 
     // Build the query
     const productIds = cart.map((item) => item.id);
@@ -100,6 +100,41 @@ async function sendPurchaseOrder(cart, poData) {
 };
 
 
+/**
+ * Load a list of purchase orders by a given user.
+ * @param {string} userEmail
+ * @returns
+ */
+async function loadPurchaseOrders(userEmail = null) {
+    //console.log('loadPurchaseOrders', userEmail);
+
+    // Get a reference to the Purchase Order collection
+    const poRef = collection(firestoreDB, PURCHASE_ORDER_COLLECTION_NAME);
+
+    // Query
+    // , orderBy('createdAt', 'desc')
+    const q = query(poRef, where('buyerInfo.email', '==', userEmail));
+
+    // getDocs returns a Promise so we use await. When it is resolved it returns a QuerySnapshot.
+    // https://firebase.google.com/docs/reference/js/firestore_.querysnapshot.md#querysnapshot_class
+    const querySnapshot = await getDocs(q);
+
+    if (querySnapshot.empty) {
+        return [];
+    }
+
+    const orders = querySnapshot.docs.map((doc) => {
+        return {
+            id: doc.id,
+            ...doc.data()
+        }
+    });
+
+    return orders;
+};
+
+
 export {
     sendPurchaseOrder,
+    loadPurchaseOrders,
 }

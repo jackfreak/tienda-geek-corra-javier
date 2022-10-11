@@ -21,12 +21,12 @@ const CheckboxField = ({ children, ...props }) => {
         <div className='mb-3'>
             <label className='form-label'>
                 <input
-                    {...field} {...props}
                     type='checkbox'
                     className={`form-control ${meta.touched && meta.error ? 'is-invalid' : null}`}
+                    {...field} {...props}
                 />
 
-                { children }
+                {children}
             </label>
 
             {meta.touched && meta.error ? (

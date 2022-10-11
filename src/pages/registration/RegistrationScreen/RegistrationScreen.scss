@@ -1,0 +1,14 @@
+@use "/src/styles/variables/variables" as vars;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+.registration-screen {
+    position: relative;
+
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        width: 33em;
+    }
+}

@@ -1,5 +1,6 @@
 @use "/src/styles/variables/variables" as vars;
 @import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/variables";
 
 
@@ -13,7 +14,7 @@
         height: 2em;
     }
 
-    .nav-link{
+    .nav-link {
         display: inline-block;
         border-radius: 6px;
 
@@ -28,6 +29,3 @@
         }
     }
 }
-
-
-

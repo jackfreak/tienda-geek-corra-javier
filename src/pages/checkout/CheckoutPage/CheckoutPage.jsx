@@ -1,10 +1,10 @@
 /**
- * Checkout component.
+ * CheckoutPage container component.
  *
  * @author Javier Alejandro Corra
  */
 
-import './Checkout.scss';
+import './CheckoutPage.scss';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useCartContext } from '../../../contexts/CartContext';
@@ -16,35 +16,29 @@ import { Loader } from '../../../components/ui/Loader/Loader';
 import { Form, Formik } from 'formik';
 import { TextInputField } from '../../../utils/forms/fields/TextInputField';
 import { EmailInputField } from '../../../utils/forms/fields/EmailInputField';
-import { getEmailSchema, getNameSchema } from '../../../utils/forms/formValidationRules';
+import { getAddressSchema, getEmailSchema, getNameSchema } from '../../../utils/forms/formValidationRules';
 import { object } from 'yup';
+import { useAuthContext } from '../../../contexts/AuthContext';
 
 
-const Checkout = () => {
+const CheckoutPage = () => {
     const { cart, getCartTotalPrice, emptyCart } = useCartContext();
+    const { user } = useAuthContext();
 
     const [purchaseResult, setPurchaseResult] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    /*
-    TEST VALUES
-    name: 'Javier',
-    lastname: 'Corra',
-    email: 'jackfreak@gmail.com',
-    address: 'Siempreviva 1234',
-    */
-
     const initialValues = {
         name: '',
         lastname: '',
-        email: '',
+        email: (user) ? user.email : '',
         address: '',
     };
 
     const validationSchema = object({
         name: getNameSchema(),
         lastname: getNameSchema(),
-        address: getNameSchema(),
+        address: getAddressSchema(),
         email: getEmailSchema(),
     });
 
@@ -53,7 +47,7 @@ const Checkout = () => {
         const po = {
             buyerInfo: values,
             items: cart,
-            created: '', // NOTE: This value will be overwritten by the service
+            createdAt: '', // NOTE: This value will be overwritten by the service
             total: getCartTotalPrice(),
         };
 
@@ -69,17 +63,9 @@ const Checkout = () => {
         if (poResult.status === StatusCode.SUCCESS) {
             emptyCart();
         }
-
-        // Emulate an asyc call to a service
-        /*
-        setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-        }, 2000);
-        */
     };
 
-    // This use case must go first, because when the purchase is successful the cart emptied.
+    // This use case must go first, because when the purchase is successful the cart is emptied.
     if (purchaseResult !== null) {
         return (
             <PurchaseResult result={purchaseResult}></PurchaseResult>
@@ -88,37 +74,43 @@ const Checkout = () => {
 
     // Check cart state, if it's empty we don't allow access to the checkout page.
     if (cart.length === 0) {
-        return <Navigate to={AppRoute.Root} />
+        return <Navigate to={AppRoute.Home} />
     }
 
     return (
-        <section className='checkout container'>
+        <section className='checkout-page'>
             <h2>Checkout</h2>
 
             {
                 loading
-                ?
-                <div className='d-flex justify-content-center'>
-                    <Loader />
-                </div>
-                :
-                <Formik
-                    initialValues={ initialValues }
-                    validationSchema={ validationSchema }
-                    onSubmit={ onSubmit }
-                >
-                    <Form noValidate>
-                        <TextInputField id='checkoutNameInput' name='name' label='Nombre' />
-                        <TextInputField id='checkoutLastNameInput' name='lastname' label='Apellido' />
-                        <TextInputField id='checkoutAddressInput' name='address' label='Dirección'/>
-                        <EmailInputField id='contactEmailInput' name='email' label='Email'/>
+                    ?
+                    <div className='d-flex justify-content-center'>
+                        <Loader />
+                    </div>
+                    :
+                    <Formik
+                        initialValues={initialValues}
+                        validationSchema={validationSchema}
+                        onSubmit={onSubmit}
+                    >
+                        <Form noValidate>
+                            <TextInputField id='checkoutNameInput' name='name' label='Nombre' />
+                            <TextInputField id='checkoutLastNameInput' name='lastname' label='Apellido' />
+                            <TextInputField id='checkoutAddressInput' name='address' label='Dirección' />
+                            <EmailInputField
+                                id='contactEmailInput'
+                                name='email'
+                                label='Email'
+                                readOnly={(user !== null)}
+                                disabled={(user !== null)}
+                            />
 
-                        <button type='submit' className='btn btn-primary'>Enviar</button>
-                    </Form>
-                </Formik>
+                            <button type='submit' className='btn btn-primary'>Enviar</button>
+                        </Form>
+                    </Formik>
             }
         </section>
     );
 };
 
-export { Checkout };
+export { CheckoutPage };

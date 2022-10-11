@@ -4,50 +4,33 @@
  * @author Javier Alejandro Corra
  */
 
+import './NewsletterSuscription.scss';
 import { Form, Formik } from 'formik';
 import { object } from 'yup';
 import { EmailInputField } from '../../../../utils/forms/fields/EmailInputField';
 import { getEmailSchema } from '../../../../utils/forms/formValidationRules';
-import './NewsletterSuscription.scss';
+import { useState } from 'react';
 
-// A custom validation function. This must return an object
- // which keys are symmetrical to our values/initialValues
- /*
-const validate = (values) => {
-    const errors = {};
 
-  if (!values.firstName) {
-        errors.firstName = 'Required';
-    } else if (values.firstName.length > 15) {
-        errors.firstName = 'Must be 15 characters or less';
-    }
-
-    if (!values.lastName) {
-        errors.lastName = 'Required';
-    } else if (values.lastName.length > 20) {
-        errors.lastName = 'Must be 20 characters or less';
-    }
-
-    if (!values.email) {
-        errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
-    }
-
-    return errors;
-};
-*/
+const newsletterSchema = object({
+    email: getEmailSchema(),
+});
 
 const NewsletterSuscription = () => {
+    const [formError, setFormError] = useState(null);
 
-    const validationSchema = object({
-        email: getEmailSchema(),
-    });
+    const onSubmit = (values, { setSubmitting, resetForm }) => {
+        // Clear the error
+        setFormError(null);
 
-    const onSubmit = (values, { setSubmitting }) => {
         // Emulate an asyc call to a service
         setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
+
+            // Remove all values in the form
+            resetForm();
+
+            // Call setSubmitting(false) to finish the cycle
             setSubmitting(false);
         }, 2000);
     };
@@ -57,22 +40,36 @@ const NewsletterSuscription = () => {
             <h3>NEWSLETTER</h3>
 
             <div className='main-footer__box'>
+                {(formError !== null) &&
+                    <div className='alert alert-danger' role="alert">
+                        <h4 className="alert-heading">Error</h4>
+                        <p>{formError}</p>
+                    </div>
+                }
+
                 <Formik
                     initialValues={{
                         email: '',
                     }}
 
-                    validationSchema={ validationSchema }
-                    onSubmit={ onSubmit }
+                    validationSchema={newsletterSchema}
+                    onSubmit={onSubmit}
                 >
-                    <Form noValidate>
-                        <EmailInputField id='nsEmailInput' name='email' aria-labelledby='emailHelp'>
-                            <div id='emailHelp' className='form-text'>Recibí las últimas novedades en tu correo</div>
-                        </EmailInputField>
+                    {({ isSubmitting }) => (
+                        <Form>
+                            <EmailInputField id='nsEmailInput' name='email' aria-labelledby='emailHelp'>
+                                <div id='emailHelp' className='form-text'>Recibí las últimas novedades en tu correo</div>
+                            </EmailInputField>
 
-                        <button type='submit' className='btn btn-primary'>Suscribirse</button>
-                    </Form>
-
+                            <button
+                                type='submit'
+                                className='btn btn-primary'
+                                disabled={isSubmitting}
+                            >
+                                Suscribirse
+                            </button>
+                        </Form>
+                    )}
                 </Formik>
             </div>
         </div>

@@ -6,9 +6,11 @@
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 // Our web app's Firebase configuration
 const firebaseConfig = {
+
     apiKey: "AIzaSyBHc8x_e54JxVbM24tWX2u2CoWU7aa80_o",
     authDomain: "tienda-geek-coderhouse.firebaseapp.com",
     projectId: "tienda-geek-coderhouse",
@@ -21,9 +23,16 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(firebaseApp);
+const firestoreDB = getFirestore(firebaseApp);
 
+// Initialize Firebase Authentication and get a reference to the service
+const firebaseAuth = getAuth(firebaseApp);
+
+// > To start the emulator run in a terminal: firebase emulators:start --only auth
+// > To view the Firebase Emulator Suite go to: localhost:4000/auth
+//connectAuthEmulator(auth, 'http://localhost:9099');
 
 export {
-    db
+    firestoreDB,
+    firebaseAuth,
 }

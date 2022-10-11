@@ -18,16 +18,16 @@ const TextInputField = ({ children, ...props }) => {
             <label htmlFor={props.id || props.name} className='form-label'>{props.label}</label>
 
             <input
-                {...field} {...props}
                 type='text'
                 className={`form-control ${meta.touched && meta.error ? 'is-invalid' : null}`}
+                {...field} {...props}
             />
 
             {meta.touched && meta.error ? (
                 <div className='invalid-feedback'>{meta.error}</div>
             ) : null}
 
-            { children }
+            {children}
         </div>
     );
 };
