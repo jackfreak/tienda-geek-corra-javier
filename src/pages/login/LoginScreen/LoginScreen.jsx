@@ -23,7 +23,7 @@ const loginSchema = object({
 
 
 const LoginScreen = () => {
-    const { user, login } = useAuthContext();
+    const { currentUser, login } = useAuthContext();
     const [formError, setFormError] = useState(null);
     //const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const LoginScreen = () => {
     };
 
     // If the user is already logged-in, redirect to home
-    if (user) {
+    if (currentUser) {
         return (<Navigate to={AppRoute.Home} />);
     }
 

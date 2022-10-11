@@ -8,50 +8,7 @@
 
     font-size: 1rem;
 
-
-    &__quantity {
-        position: relative;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-
-
-        // https: //www.w3schools.com/howto/howto_css_hide_arrow_number.asp
-
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-    }
-
-    &__increase-btn, &__decrease-btn {
-
-    }
-
-    &__input {
-        display: block;
-
-        width: 3em;
-        //background: white;
-
-        border: 1px solid grey;
-
-    }
-
     &__add-to-cart-btn {
         width: 100%;
-        margin-top: 1em;
     }
 }
-
-
-

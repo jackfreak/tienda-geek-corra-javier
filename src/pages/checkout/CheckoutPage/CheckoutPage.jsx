@@ -23,7 +23,7 @@ import { useAuthContext } from '../../../contexts/AuthContext';
 
 const CheckoutPage = () => {
     const { cart, getCartTotalPrice, emptyCart } = useCartContext();
-    const { user } = useAuthContext();
+    const { currentUser } = useAuthContext();
 
     const [purchaseResult, setPurchaseResult] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -31,7 +31,7 @@ const CheckoutPage = () => {
     const initialValues = {
         name: '',
         lastname: '',
-        email: (user) ? user.email : '',
+        email: (currentUser) ? currentUser.email : '',
         address: '',
     };
 
@@ -101,8 +101,8 @@ const CheckoutPage = () => {
                                 id='contactEmailInput'
                                 name='email'
                                 label='Email'
-                                readOnly={(user !== null)}
-                                disabled={(user !== null)}
+                                readOnly={(currentUser !== null)}
+                                disabled={(currentUser !== null)}
                             />
 
                             <button type='submit' className='btn btn-primary'>Enviar</button>

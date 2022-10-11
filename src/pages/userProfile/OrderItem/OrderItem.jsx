@@ -13,6 +13,8 @@ import { Timestamp } from 'firebase/firestore';
 
 import dayjs from 'dayjs';
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
+import { AppRoute } from '../../../utils/constants/AppRoute';
+import { Link } from 'react-router-dom';
 
 dayjs.extend(LocalizedFormat);
 
@@ -30,22 +32,28 @@ const OrderItem = ({ data }) => {
     console.log(data);
 
     return (
-        <div className='order-item'>
+        <div className='card order-item'>
+            <div className='card-header'>
+                <strong>
+                    <time dateTime={formattedDateISO}>{formattedDateText}</time>
+                </strong>
+            </div>
 
-            <p>Orden: <strong>{id}</strong></p>
-            <p>Fecha: <time datetime={formattedDateISO}>{formattedDateText}</time></p>
-            <p>Total: $ {formatStringIntegerLocale(total)}</p>
+            <div className='card-body'>
+                <p>Orden: <strong>{id}</strong></p>
+                <p>Total: $ {formatStringIntegerLocale(total)}</p>
 
-            <ul className='vstack gap-2'>
-                {
-                    items.map((item) => {
-                        return (<li className='d-flex align-items-start' key={item.id}>
-                            <span className='badge text-bg-secondary'>{item.quantity}x</span>
-                            <span className='ms-2'>{item.name}</span>
-                        </li>);
-                    })
-                }
-            </ul>
+                <ul className='vstack gap-2'>
+                    {
+                        items.map((item) => {
+                            return (<li className='d-flex align-items-start' key={item.id}>
+                                <span className='badge text-bg-secondary'>{item.quantity}x</span>
+                                <Link to={`${AppRoute.Product}/${item.id}`} className='ms-2 link-dark'>{item.name}</Link>
+                            </li>);
+                        })
+                    }
+                </ul>
+            </div>
         </div>
     );
 };

@@ -10,20 +10,10 @@ import { useContext, useState } from "react";
 import { createContext } from "react"
 import { firebaseAuth } from '../firebase/FirebaseConfig';
 
-
-/*
-const ALLOWED_USERS = [
-    {
-        email: 'admin@admin.com',
-        password: 'admin',
-    },
-    {
-        email: 'javier.alejandro.corra@gmail.com',
-        password: 'qwerty',
-    }
+const ADMIN_USERS = [
+    '7ocBg4zkJPYdJzZ7BcLB9VtOqZ02', // admin@
+    'Snh878m4SAQvb62xMSNQymBCSCX2', // jf@
 ];
-*/
-
 
 /**
  * Context
@@ -40,15 +30,17 @@ const useAuthContext = () => {
  * @returns
  */
 const AuthProvider = ({ children }) => {
-    /*
-    const [user, setUser] = useState({
-        user: '',
-        isLogged: false,
-        role: ''
-    });
-    */
-    const [user, setUser] = useState();
+    const [currentUser, setCurrentUser] = useState(null);
+    const [isUserLoading, setIsUserLoading] = useState(true);
 
+
+    /**
+     *
+     * @returns
+     */
+    function isAdmin() {
+        return (currentUser) && (ADMIN_USERS.indexOf(currentUser.uid) !== -1);
+    }
 
     /**
      * Signup the user with email/password
@@ -88,11 +80,6 @@ const AuthProvider = ({ children }) => {
         }).catch((error) => {
         // An error happened.
         });
-
-        setUser({
-            user: '',
-            isLogged: false,
-        });
         */
     }
 
@@ -106,14 +93,17 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/firebase.User
-                setUser(currentUser);
+                setCurrentUser(currentUser);
                 console.log('LOGGED USER', currentUser);
 
             } else {
                 // User is signed out
-                setUser(null);
+                setCurrentUser(null);
                 console.log('LOGGED OUT USER', null);
             }
+
+            // Signal that the user state loading proccess is completed
+            setIsUserLoading(false);
         });
 
         // Cleanup
@@ -126,7 +116,9 @@ const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{
-            user,
+            currentUser,
+            isAdmin,
+            isUserLoading,
             signup,
             login,
             logout,

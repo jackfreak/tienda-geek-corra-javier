@@ -25,7 +25,7 @@ import { useAuthContext } from '../../../../contexts/AuthContext';
 */
 
 const NavBar = () => {
-    const { user, logout } = useAuthContext();
+    const { currentUser, isAdmin, logout } = useAuthContext();
 
     const navigate = useNavigate();
 
@@ -87,7 +87,7 @@ const NavBar = () => {
                         </Nav.Item>
 
                         {
-                            (user) &&
+                            (isAdmin()) &&
                             <Nav.Item as='li'>
                                 <NavLink to={AppRoute.AdminPanel} className='nav-link'>
                                     <strong>ADMIN PANEL</strong>
@@ -97,7 +97,7 @@ const NavBar = () => {
 
                         <NavDropdown title='Mi Cuenta' menuVariant='light' as='li' id='nav-dropdown-my-account'>
                             {
-                                (user)
+                                (currentUser)
                                     ?
                                     <>
                                         <NavDropdown.Item as={Link} to={AppRoute.UserProfile}>

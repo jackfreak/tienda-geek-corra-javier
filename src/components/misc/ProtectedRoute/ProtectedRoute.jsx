@@ -4,24 +4,24 @@
  * @author Javier Alejandro Corra
  */
 
-//import './ProtectedRoute.scss';
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import { AppRoute } from '../../../utils/constants/AppRoute';
 
 
+const ProtectedRoute = ({ children, redirectPath = AppRoute.Login }) => {
+    const { currentUser, isUserLoading } = useAuthContext();
 
-const ProtectedRoute = ({ children }) => {
-    const { user } = useAuthContext();
+    // While currentUser has an undefined state, do nothing
+    if (isUserLoading) return null;
 
-    // While user has an undefined state, do nothing
-    if (user === undefined) return null;
+    if (!currentUser) {
+        // Not logged-in so redirect to the redirectPath route with the return url.
+        return (<Navigate to={redirectPath} replace={true} />);
 
-    if (user === null) {
-        return (<Navigate to={AppRoute.Home} />);
     }
-
-    return children;
+    // User authorised so return wrapped components
+    return (<>{children}</>);
 };
 
 

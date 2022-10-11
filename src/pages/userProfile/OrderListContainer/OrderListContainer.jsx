@@ -16,7 +16,7 @@ import { useAuthContext } from '../../../contexts/AuthContext';
 
 const OrderListContainer = () => {
     //console.log('OrderListContainer');
-    const { user } = useAuthContext();
+    const { currentUser } = useAuthContext();
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -24,9 +24,9 @@ const OrderListContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        console.log('orderlistcontainer mount', user);
+        console.log('orderlistcontainer mount', currentUser);
 
-        loadPurchaseOrders(user.email)
+        loadPurchaseOrders(currentUser.email)
             .then((result) => {
                 console.log('ORDERS', result);
                 setOrders(result);
@@ -37,12 +37,12 @@ const OrderListContainer = () => {
             .finally(() => {
                 setLoading(false);
             });
-    }, [user]); // TODO: is user really neccesary?
+    }, [currentUser]); // TODO: is user really neccesary?
 
 
     return (
         <div className='order-list-container'>
-            <h3 className='order-list-container__title'>Mis ordenes de compra</h3>
+            <h3 className='order-list-container__title'>Mis compras</h3>
 
             <div className='order-list-container__cell'>{
                 (loading)

@@ -15,11 +15,9 @@
     text-align: center;
 
 
-    /*
     @media screen and (min-width: vars.$lg) {
-
+        width: 18rem;
     }
-    */
 
     /*
     .card-body {
@@ -53,15 +51,19 @@
 
 
     &__title {
-        font-size: 1em;
-        font-weight: vars.$font-weight-regular;
-
-        margin: .5em 0;
-
         color: vars.$black;
+        text-decoration: none;
 
-        @media screen and (min-width:vars.$lg) {
-            font-size: 1em;
+        h5 {
+            font-size: 1rem;
+            font-weight: vars.$font-weight-regular;
+
+            margin: 0;
+            padding: .5em;
+
+            @media screen and (min-width:vars.$lg) {
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -69,13 +71,12 @@
         width: auto;
         height: 12em;
 
-        //background-color: blue;
+        //background-color: #000;
 
-        //border-radius: 20px;
-        //object-fit: cover;
+        border-radius: .3rem;
+        object-fit: contain;
 
         @media screen and (min-width: vars.$lg) {
-            width: auto;
             height: 14em;
         }
     }

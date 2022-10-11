@@ -22,7 +22,7 @@ import { useState } from 'react';
 
 
 const AdminPanel = () => {
-    const { user } = useAuthContext();
+    const { isAdmin } = useAuthContext();
 
     const [showModal, setShowModal] = useState(false);
     //const [loading, setLoading] = useState(false);
@@ -56,8 +56,9 @@ const AdminPanel = () => {
         alert('Stock reset SUCCESSFUL');
     };
 
-    if (!user) {
-        return (<Navigate to={AppRoute.Login} />);
+    // ONLY users with "admin" role are authorised
+    if (!isAdmin()) {
+        return (<Navigate to={AppRoute.Home} />);
     }
 
     return (

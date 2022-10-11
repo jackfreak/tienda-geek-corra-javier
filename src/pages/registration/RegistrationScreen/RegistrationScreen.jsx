@@ -23,7 +23,7 @@ const registrationSchema = object({
 
 
 const RegistrationScreen = () => {
-    const { user, signup } = useAuthContext();
+    const { currentUser, signup } = useAuthContext();
     const [formError, setFormError] = useState(null);
     //const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const RegistrationScreen = () => {
     };
 
     // If the user is already logged-in, redirect to home
-    if (user) {
+    if (currentUser) {
         return (<Navigate to={AppRoute.Home} />);
     }
 

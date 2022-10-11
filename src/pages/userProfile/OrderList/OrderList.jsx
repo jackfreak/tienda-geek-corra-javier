@@ -21,7 +21,7 @@ const OrderList = ({ orders = [] }) => {
                 })
                 :
                 <Alert variant='primary'>
-                    No tienes ordenes de compra previas.
+                    No tienes compras previas.
                 </Alert>
         }
         </div>

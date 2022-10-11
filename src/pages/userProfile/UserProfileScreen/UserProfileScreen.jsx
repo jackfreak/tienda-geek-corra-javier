@@ -10,13 +10,14 @@ import { useAuthContext } from '../../../contexts/AuthContext';
 //import { AppRoute } from '../../../utils/constants/AppRoute';
 import { OrderListContainer } from '../OrderListContainer/OrderListContainer';
 
-
+// https://youtu.be/H_vEJt5Id_I?t=4654
 const UserProfileScreen = () => {
-    const { user } = useAuthContext();
+    const { currentUser } = useAuthContext();
 
+    // TODO: is this neccessary ? we already have the ProtectedRoute wrapper
     /*
-    if (user === null) {
-        return (<Navigate to={AppRoute.Login} />)
+    if (isUserLoading) {
+        return <Loader />;
     }
     */
 
@@ -25,10 +26,10 @@ const UserProfileScreen = () => {
             <h2>Mi cuenta</h2>
 
             <div className='user-profile'>
-                <p className='user-profile__name'>{user.email}</p>
+                <p className='user-profile__name'>{currentUser.email}</p>
 
                 {
-                    (!user.emailVerified) && <p className='my-3  text-danger'>E-mail sin verificar.</p>
+                    (!currentUser.emailVerified) && <p className='my-3  text-danger'>E-mail sin verificar.</p>
                 }
 
             </div>

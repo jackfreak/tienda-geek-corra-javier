@@ -30,7 +30,7 @@ const PurchaseResultDetail = ({ result }) => {
                     result.outOfStock.map((item) => {
                         //console.log(item.id);
                         return (
-                            <li key={ item.id } className=''>
+                            <li key={item.id}>
                                 <Link to={`${AppRoute.Product}/${item.id}`} className=''>{item.name}</Link>
                             </li>
                         )
@@ -54,7 +54,7 @@ const PurchaseResultDetail = ({ result }) => {
     return (
         <>
             <h2>Compra Exitosa</h2>
-            <p>Tu número de orden es: <strong>{ poId }</strong></p>
+            <p>Tu número de orden es: <strong>{poId}</strong></p>
         </>
     );
 };

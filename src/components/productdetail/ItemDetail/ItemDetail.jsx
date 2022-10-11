@@ -15,18 +15,15 @@ import { RichTextRenderer } from '../../misc/RichTextRenderer/RichTextRenderer';
 import { useCartContext } from '../../../contexts/CartContext';
 import { AppRoute } from '../../../utils/constants/AppRoute';
 
-/**
- * Initial Quantity
- */
+
 const INITIAL_QTY = 1;
 
 const ItemDetail = ({ itemData = {} }) => {
     const { id, name, description, image, price, stock } = itemData;
 
     const { addToCart, isInCart } = useCartContext();
-
     const [count, setCount] = useState(INITIAL_QTY);
-    //const [purchaseQty, setPurchaseQty] = useState(0);
+
 
     const navigate = useNavigate();
 
@@ -39,7 +36,6 @@ const ItemDetail = ({ itemData = {} }) => {
             stock,
             quantity,
         };
-        //setPurchaseQty(quantity); // todo ?
 
         addToCart(newCartItem);
     };
@@ -71,7 +67,7 @@ const ItemDetail = ({ itemData = {} }) => {
                                 Ver carrito
                             </Button>
                         ) : (
-                            <ItemCount stock={stock} initial={INITIAL_QTY} count={count} setCount={setCount} onAddToCart={onAddToCart} />
+                            <ItemCount stock={stock} count={count} setCount={setCount} onAddToCart={onAddToCart} />
                         )}
                     </div>
                 </div>

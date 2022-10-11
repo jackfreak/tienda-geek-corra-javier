@@ -54,22 +54,29 @@ function App() {
                             <Routes>
                                 <Route path={AppRoute.Home} element={<ItemListContainer />} />
 
-                                <Route path={AppRoute.Login} element={<LoginScreen></LoginScreen>} />
-                                <Route path={AppRoute.Registration} element={<RegistrationScreen></RegistrationScreen>} />
+                                <Route path={AppRoute.Login} element={<LoginScreen />} />
+                                <Route path={AppRoute.Registration} element={<RegistrationScreen />} />
+
                                 <Route path={AppRoute.UserProfile} element={
                                     <ProtectedRoute>
-                                        <UserProfileScreen></UserProfileScreen>
+                                        <UserProfileScreen />
                                     </ProtectedRoute>
                                 } />
-                                <Route path={AppRoute.AdminPanel} element={<AdminPanel></AdminPanel>} />
+
+                                <Route path={AppRoute.AdminPanel} element={
+                                    <ProtectedRoute redirectPath={AppRoute.Home}>
+                                        <AdminPanel />
+                                    </ProtectedRoute>
+                                } />
+
 
                                 <Route path={AppRoute.Category + '/:categoryId'} element={<ItemListContainer />} />
                                 <Route path={AppRoute.Product + '/:itemId'} element={<ItemDetailContainer />} />
 
-                                <Route path={AppRoute.Contact} element={<ContactPage></ContactPage>} />
+                                <Route path={AppRoute.Contact} element={<ContactPage />} />
 
-                                <Route path={AppRoute.Cart} element={<CartPage></CartPage>} />
-                                <Route path={AppRoute.Checkout} element={<CheckoutPage></CheckoutPage>} />
+                                <Route path={AppRoute.Cart} element={<CartPage />} />
+                                <Route path={AppRoute.Checkout} element={<CheckoutPage />} />
 
 
                                 <Route path='*' element={<Error404 />} />
