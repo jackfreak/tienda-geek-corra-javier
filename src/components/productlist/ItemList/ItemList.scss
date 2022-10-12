@@ -1,6 +1,7 @@
+@use "/src/styles/variables/variables" as vars;
 @import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins.scss";
 
 .item-list {
     position: relative;
@@ -36,6 +37,3 @@
     }
     */
 }
-
-
-

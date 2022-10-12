@@ -12,7 +12,6 @@ import { useField } from "formik";
 const TextInputField = ({ children, ...props }) => {
     const [field, meta] = useField(props);
 
-    // FormGroup ?
     return (
         <div className='mb-3'>
             <label htmlFor={props.id || props.name} className='form-label'>{props.label}</label>

@@ -6,8 +6,6 @@
 
 import { useField } from "formik";
 
-//import './EmailInputField.scss';
-
 
 const EmailInputField = ({ label = 'Email', children, ...props }) => {
     // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]

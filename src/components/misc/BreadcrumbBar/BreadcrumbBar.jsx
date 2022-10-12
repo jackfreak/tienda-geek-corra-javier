@@ -10,8 +10,8 @@ import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
 import { React } from 'react';
 import { Container } from 'react-bootstrap';
-import { capitalize } from '../../../utils/helpers/stringHelpers';
-import { AppRoute } from '../../../utils/constants/AppRoute';
+import { capitalize } from 'utils/helpers/stringHelpers';
+import { AppRoute } from 'utils/constants/AppRoute';
 //import { Breadcrumb } from 'react-bootstrap';
 
 /*

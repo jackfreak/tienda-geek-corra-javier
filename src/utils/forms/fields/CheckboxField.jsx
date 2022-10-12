@@ -6,8 +6,6 @@
 
 import { useField } from "formik";
 
-//import './CheckboxField.scss';
-
 
 const CheckboxField = ({ children, ...props }) => {
     // React treats radios and checkbox inputs differently other input types, select, and textarea.
@@ -16,7 +14,6 @@ const CheckboxField = ({ children, ...props }) => {
     // in `field` alongside `name`, `value`, `onChange`, and `onBlur`
     const [field, meta] = useField({ ...props, type: 'checkbox' });
 
-    // FormGroup ?
     return (
         <div className='mb-3'>
             <label className='form-label'>

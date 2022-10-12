@@ -6,8 +6,6 @@
 
 import { useField } from "formik";
 
-//import './TextAreaField.scss';
-
 
 const TextAreaField = ({ children, ...props }) => {
     const [field, meta] = useField(props);

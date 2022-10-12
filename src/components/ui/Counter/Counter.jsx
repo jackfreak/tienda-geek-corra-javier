@@ -27,7 +27,7 @@ const Counter = ({ stock, count, setCount }) => {
                 <BsDash />
             </button>
 
-            <span class='counter__quantity input-group-text'>{(stock >= 1) ? count : 0}</span>
+            <span className='counter__quantity input-group-text'>{(stock >= 1) ? count : 0}</span>
 
             <button type='button' className='counter__increase-btn btn btn-primary'
                 onClick={handleIncrease}>

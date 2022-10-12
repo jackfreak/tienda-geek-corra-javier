@@ -5,11 +5,9 @@
  */
 
 import './Item.scss';
-//import styles from './Item.modules.scss'; // TODO review css modules
-
-import { formatStringIntegerLocale } from '../../../utils/helpers/stringHelpers';
+import { AppRoute } from 'utils/constants/AppRoute';
+import { formatStringIntegerLocale } from 'utils/helpers/stringHelpers';
 import { Link } from 'react-router-dom';
-import { AppRoute } from '../../../utils/constants/AppRoute';
 
 const Item = ({ itemData }) => {
     const { id, name, image, price } = itemData;
