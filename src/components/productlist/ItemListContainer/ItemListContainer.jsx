@@ -15,8 +15,6 @@ import { Loader } from '../../ui/Loader/Loader';
 
 
 const ItemListContainer = () => {
-    //console.log('ItemListContainer');
-
     const { categoryId } = useParams();
 
     const [products, setProducts] = useState([]);

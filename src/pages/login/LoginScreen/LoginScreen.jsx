@@ -28,8 +28,6 @@ const LoginScreen = () => {
     //const navigate = useNavigate();
 
     const onSubmit = async (values, { setSubmitting }) => {
-        console.log(JSON.stringify(values, null, 2));
-
         // Clear the error
         setFormError(null);
 
@@ -42,7 +40,7 @@ const LoginScreen = () => {
             //navigate(AppRoute.Home);
 
         } catch (err) {
-            console.log(err);
+            //console.error(err);
 
             // TODO: Use error codes to give a better error message to the user
             //const errorCode = error.code;

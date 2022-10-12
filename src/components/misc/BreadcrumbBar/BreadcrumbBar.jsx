@@ -10,21 +10,9 @@ import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
 import { React } from 'react';
 import { Container } from 'react-bootstrap';
-import { capitalize } from 'utils/helpers/stringHelpers';
-import { AppRoute } from 'utils/constants/AppRoute';
-//import { Breadcrumb } from 'react-bootstrap';
+import { capitalize } from '../../../utils/helpers/stringHelpers';
+import { AppRoute } from '../../../utils/constants/AppRoute';
 
-/*
-
-<Breadcrumb>
-    <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-    <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-        Library
-    </Breadcrumb.Item>
-    <Breadcrumb.Item active>Data</Breadcrumb.Item>
-</Breadcrumb>
-
-*/
 
 const DynamicItemBreadcrumb = ({ match }) => (
     // TODO: Get the name of the item
@@ -32,11 +20,9 @@ const DynamicItemBreadcrumb = ({ match }) => (
 );
 
 const DynamicCategoryBreadcrumb = (data) => {
-    //console.log('DynamicCategoryBreadcrumb', data);
     const { match } = data;
 
     return <span>{capitalize(match.params.categoryId)}</span>;
-    //return (<Link to={match.pathname} className=''>{ match.params.categoryId }</Link>);
 };
 
 // Define custom breadcrumbs for certain routes.
@@ -80,13 +66,10 @@ const BreadcrumbBar = () => {
             <nav aria-label='breadcrumb' className='breadcrumb-bar'>
                 <ol className='breadcrumb' style={{ '--bs-breadcrumb-divider': "'>'" }}>
                     {breadcrumbs.map((data) => {
-                        //console.log(data);
-
                         const { match, breadcrumb } = data;
 
                         return (
                             <li className='breadcrumb-item' key={match.pathname}>
-                                {/*<Link to={match.pathname} className=''>{breadcrumb}</Link>*/}
                                 {breadcrumb}
                             </li>
                         );

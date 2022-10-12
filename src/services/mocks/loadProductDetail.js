@@ -11,8 +11,6 @@ import productsJSONData from '../data/products.json';
  * @returns
  */
 const loadProductDetail = (id) => {
-    //console.warn('loadProductDetail');
-
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const productDetail = productsJSONData.find(prod => prod.id === Number(id));

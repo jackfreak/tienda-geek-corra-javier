@@ -29,8 +29,6 @@ const OrderItem = ({ data }) => {
     const formattedDateISO = dayjsDate.format(); // in ISO8601
     const formattedDateText = dayjsDate.format('LLLL'); // format based on locale
 
-    console.log(data);
-
     return (
         <div className='card order-item'>
             <div className='card-header'>

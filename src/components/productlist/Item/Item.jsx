@@ -5,8 +5,8 @@
  */
 
 import './Item.scss';
-import { AppRoute } from 'utils/constants/AppRoute';
-import { formatStringIntegerLocale } from 'utils/helpers/stringHelpers';
+import { AppRoute } from '../../../utils/constants/AppRoute';
+import { formatStringIntegerLocale } from '../../../utils/helpers/stringHelpers';
 import { Link } from 'react-router-dom';
 
 const Item = ({ itemData }) => {

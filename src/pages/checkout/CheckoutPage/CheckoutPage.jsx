@@ -43,7 +43,6 @@ const CheckoutPage = () => {
     });
 
     const onSubmit = async (values, { setSubmitting }) => {
-        console.log(values);
         const po = {
             buyerInfo: values,
             items: cart,
@@ -54,7 +53,6 @@ const CheckoutPage = () => {
         setLoading(true);
 
         const poResult = await sendPurchaseOrder(cart, po);
-        //console.log('poResult', poResult);
 
         setLoading(false);
 

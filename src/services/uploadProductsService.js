@@ -16,8 +16,6 @@ import { PRODUCTS_COLLECTION_NAME } from './helpers/collections.constants';
  * @returns
  */
 async function createProducts() {
-    console.log('createProducts');
-
     // Get a new write batch
     const batch = writeBatch(firestoreDB);
 
@@ -28,8 +26,6 @@ async function createProducts() {
         // Delete json id from the object
         delete item.id;
 
-        console.log(id, item);
-
         // Create a doc reference using our custom id
         const docRef = doc(firestoreDB, PRODUCTS_COLLECTION_NAME, id);
 
@@ -38,8 +34,6 @@ async function createProducts() {
 
 
     await batch.commit();
-
-    console.log('success');
 };
 
 
@@ -48,8 +42,6 @@ async function createProducts() {
  * @returns
  */
 async function resetStock() {
-    console.log('resetStock');
-
     const STOCK_VALUE = 10;
 
     // Get a new write batch
@@ -75,7 +67,6 @@ async function resetStock() {
 
     try {
         await batch.commit();
-        console.log('resetStock SUCCESS');
 
     } catch (err) {
         console.error(err);

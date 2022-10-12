@@ -15,7 +15,6 @@ import { useAuthContext } from '../../../contexts/AuthContext';
 
 
 const OrderListContainer = () => {
-    //console.log('OrderListContainer');
     const { currentUser } = useAuthContext();
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -24,11 +23,8 @@ const OrderListContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        console.log('orderlistcontainer mount', currentUser);
-
         loadPurchaseOrders(currentUser.email)
             .then((result) => {
-                console.log('ORDERS', result);
                 setOrders(result);
             })
             .catch((err) => {
@@ -37,7 +33,7 @@ const OrderListContainer = () => {
             .finally(() => {
                 setLoading(false);
             });
-    }, [currentUser]); // TODO: is user really neccesary?
+    }, [currentUser]);
 
 
     return (

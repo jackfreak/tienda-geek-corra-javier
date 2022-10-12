@@ -13,11 +13,6 @@ const EmailInputField = ({ label = 'Email', children, ...props }) => {
     // message if the field is invalid and it has been touched (i.e. visited)
     const [field, meta] = useField(props);
 
-    //console.log('field', field);
-    //console.log('meta', meta);
-    //console.log(props);
-    //console.log(children);
-
     return (
         <div className='mb-3'>
             <label htmlFor={props.id || props.name} className='form-label'>{label}</label>

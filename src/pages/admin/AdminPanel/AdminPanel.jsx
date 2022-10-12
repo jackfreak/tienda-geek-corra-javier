@@ -31,25 +31,15 @@ const AdminPanel = () => {
         setShowModal(false);
     };
 
-    /*
-    const handleShow = () => {
-        setShowModal(true);
-    };
-    */
 
-
-    // TODO: IMPLEMENT DROP AREA TO UPLOAD A JSON FILE
     const handleResetStock = (e) => {
-        console.log('RESET STOCK');
         setShowModal(true);
     };
 
     const handleResetStockConfirmation = async (e) => {
-        // TODO: iMPLEMENTATION AND POPUP WARNING MESSAGE
+        // TODO: POPUP WARNING MESSAGE
 
-        //setLoading(true);
         await resetStock();
-        //setLoading(false);
 
         setShowModal(false);
 

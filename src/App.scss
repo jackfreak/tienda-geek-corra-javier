@@ -15,7 +15,6 @@ $grid-breakpoints: (
     xxxl: vars.$xxxl,
 );
 
-//@import "./partials/bootstrap-config"; // Custom bootstrap config
 @import "~bootstrap/scss/bootstrap";
 
 @import "./styles/main.scss";
@@ -31,7 +30,4 @@ $grid-breakpoints: (
     align-items: initial;
 
     min-height: 100vh;
-
-    //--bs-link-color: red; //vars.$black;
-    //--bs-link-hover-color: yellow; //vars.$gray-darker;
 }

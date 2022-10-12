@@ -57,8 +57,6 @@ e-mail: admin@admin.com
 pass: admin1234!
 ```
 
-* El proyecto tiene activado `imports` absolutos a travez del archivo de configuración `jsconfig.json`.
-
 * La categoría "Accesorios" no contiene productos. Esto no es un error, es a propósito para ejemplificar y testear el caso de uso donde una categoría de productos se queda temporalmente sin productos dados de alta en el backend. Si a nivel negocio se prevee que dicha categoría no volverá a tener productos cargados, la categoría debería ser dada de baja y elmininada del menú.
 
 

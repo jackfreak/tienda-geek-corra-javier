@@ -30,8 +30,6 @@ const NavBar = () => {
     const navigate = useNavigate();
 
     const handleLogout = async (e) => {
-        console.log('logout');
-
         try {
             await logout();
 

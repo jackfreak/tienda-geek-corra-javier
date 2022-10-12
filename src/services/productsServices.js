@@ -15,8 +15,6 @@ import { PRODUCTS_COLLECTION_NAME } from './helpers/collections.constants';
  * @returns
  */
 async function loadProducts(categoryId = null) {
-    //console.warn('loadProducts');
-
     // Get a reference to the collection we want to use
     const productsCollection = collection(firestoreDB, PRODUCTS_COLLECTION_NAME);
 
@@ -49,8 +47,6 @@ async function loadProducts(categoryId = null) {
  * @returns
  */
 async function loadProductDetail(productId) {
-    //console.warn('loadProductDetail', productId);
-
     // Get a reference to the document we want to use
     const productDoc = doc(firestoreDB, PRODUCTS_COLLECTION_NAME, productId);
 

@@ -25,28 +25,27 @@ const ItemDetailContainer = () => {
         setLoading(true);
 
         loadProductDetail(itemId)
-        .then( (result) => {
-            //console.log('itemData', result);
-            setItem(result);
-        })
-        .catch( (err) => {
-            console.error(err);
-        })
-        .finally(() => {
-            setLoading(false);
-        });
+            .then((result) => {
+                setItem(result);
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, [itemId]);
 
     return (
         <Container className='item-detail-container' as='section'>
             {
                 (loading)
-                ?
-                <div className='item-detail-container__cell'>
-                    <Loader />
-                </div>
-                :
-                <ItemDetail itemData={item} />
+                    ?
+                    <div className='item-detail-container__cell'>
+                        <Loader />
+                    </div>
+                    :
+                    <ItemDetail itemData={item} />
             }
         </Container>
     );

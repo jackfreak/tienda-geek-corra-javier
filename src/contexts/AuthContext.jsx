@@ -48,8 +48,6 @@ const AuthProvider = ({ children }) => {
      * @param {string} password
      */
     async function signup(email, password) {
-        console.log('AuthProvider::signup', email, password);
-
         return createUserWithEmailAndPassword(firebaseAuth, email, password)
     }
 
@@ -60,8 +58,6 @@ const AuthProvider = ({ children }) => {
      * @param {string} password
      */
     async function login(email, password) {
-        console.log('AuthProvider::login', email, password);
-
         return signInWithEmailAndPassword(firebaseAuth, email, password);
     }
 
@@ -70,36 +66,20 @@ const AuthProvider = ({ children }) => {
      * Logout the current user
      */
     async function logout() {
-        console.log('AuthProvider::logout');
-
         return signOut(firebaseAuth);
-
-        /*
-        signOut(auth).then(() => {
-        // Sign-out successful.
-        }).catch((error) => {
-        // An error happened.
-        });
-        */
     }
 
     useEffect(() => {
-        console.log('AuthProvider::mounted');
-
         // https://firebase.google.com/docs/reference/js/auth.md?authuser=0&hl=en#onauthstatechanged
         const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
-            console.log('onAuthStateChanged', currentUser);
-
             if (currentUser) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/firebase.User
                 setCurrentUser(currentUser);
-                console.log('LOGGED USER', currentUser);
 
             } else {
                 // User is signed out
                 setCurrentUser(null);
-                console.log('LOGGED OUT USER', null);
             }
 
             // Signal that the user state loading proccess is completed

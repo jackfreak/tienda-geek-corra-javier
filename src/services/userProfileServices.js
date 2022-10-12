@@ -18,11 +18,8 @@ import { StatusCode } from './helpers/statusCodes.constants';
  * @returns A PO status object containing the id of the new PO
  */
 async function createUserProfile(userProfileData) {
-    //console.log('createUserProfile::sendPurchaseOrder');
-
     // Add creation time using server-side timestamp.
     poData.createdAt = serverTimestamp();
-    //console.log(poData);
 
     // Get a new write batch
     const batch = writeBatch(firestoreDB);
@@ -60,8 +57,6 @@ async function createUserProfile(userProfileData) {
             });
         }
     });
-
-    //console.log('outOfStock', outOfStock);
 
     if (outOfStock.length === 0) {
         // Stock checks out!, now we can create our purchase order...
@@ -106,8 +101,6 @@ async function createUserProfile(userProfileData) {
  * @returns
  */
 async function loadUserProfile(userEmail = null) {
-    //console.log('loadPurchaseOrders', userEmail);
-
     // Get a reference to the Purchase Order collection
     const poRef = collection(firestoreDB, PURCHASE_ORDER_COLLECTION_NAME);
 

@@ -28,7 +28,6 @@ const PurchaseResultDetail = ({ result }) => {
             <ul>
                 {
                     result.outOfStock.map((item) => {
-                        //console.log(item.id);
                         return (
                             <li key={item.id}>
                                 <Link to={`${AppRoute.Product}/${item.id}`} className=''>{item.name}</Link>
