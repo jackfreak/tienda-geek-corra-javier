@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Header } from './components/ui/header/Header/Header';
 import { HeroBanner } from './pages/home/HeroBanner/HeroBanner';
+
 import { ItemListContainer } from './components/productList/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/productDetail/ItemDetailContainer/ItemDetailContainer';
 import { ContactPage } from './pages/contact/ContactPage/ContactPage';
