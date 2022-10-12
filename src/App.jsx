@@ -11,8 +11,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/ui/header/Header/Header';
 import { HeroBanner } from './pages/home/HeroBanner/HeroBanner';
 
-import { ItemListContainer } from './components/productList/ItemListContainer/ItemListContainer';
-import { ItemDetailContainer } from './components/productDetail/ItemDetailContainer/ItemDetailContainer';
+import { ItemListContainer } from './components/productlist/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './components/productdetail/ItemDetailContainer/ItemDetailContainer';
 import { ContactPage } from './pages/contact/ContactPage/ContactPage';
 import { Error404 } from './components/misc/Error404/Error404';
 import { BreadcrumbBar } from './components/misc/BreadcrumbBar/BreadcrumbBar';
