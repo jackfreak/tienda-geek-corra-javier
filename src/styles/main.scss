@@ -13,7 +13,6 @@
 |--------------------------------------------------------------------------
 */
 
-//@import "./mixins/mixins-button-styles";
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +32,6 @@
 @import "./partials/fonts";
 @import "./partials/general-styles";
 @import "./partials/text-styles";
-//@import "./partials/button-styles";
 
 
 
@@ -56,9 +54,6 @@
 // layer: 4, final transp: 0.15, hori and ver distance: 20px, blur strength: 40px, spread: 0
 .card-smooth-shadow {
     //@extend .morph;
-    //border: none;
-
-    //background: var(--color-white);
 
     border-radius: vars.$border-radius;
 

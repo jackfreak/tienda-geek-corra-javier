@@ -6,15 +6,6 @@
 .item-list {
     position: relative;
 
-    /*
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    */
-
-
     .cell {
         position: relative;
 
@@ -25,15 +16,4 @@
 
         padding: .5em;
     }
-
-    /*
-    @include media-breakpoint-up(lg) {
-        //min-width: min-content;
-
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: stretch;
-    }
-    */
 }

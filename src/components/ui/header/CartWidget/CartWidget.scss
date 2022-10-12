@@ -1,12 +1,11 @@
+@use "/src/styles/variables/variables" as vars;
 @import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
 
 .cart-widget {
     position: relative;
     font-size: 1em;
-
-    //overflow: hidden;
 
     &__btn {
         position: relative;
@@ -14,15 +13,6 @@
 
         min-width: 5em;
 
-        /*
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        */
-
-
-        //transform: translate(0, -100%);
         @include media-breakpoint-up(lg) {
             margin-left: .5em;
         }

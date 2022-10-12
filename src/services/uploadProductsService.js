@@ -7,15 +7,16 @@
 
 import { writeBatch, doc, collection, getDocs } from 'firebase/firestore';
 import { firestoreDB } from '../firebase/FirebaseConfig';
-import products from './mocks/data/products.json';
 import { PRODUCTS_COLLECTION_NAME } from './helpers/collections.constants';
 
 
 /**
  * Set  a list of product items.
+ * You can import a json file and pass it in products.
+ * Example: import products from './mocks/data/products.json';
  * @returns
  */
-async function createProducts() {
+async function createProducts(products) {
     // Get a new write batch
     const batch = writeBatch(firestoreDB);
 

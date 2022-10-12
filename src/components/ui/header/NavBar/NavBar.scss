@@ -7,8 +7,6 @@
 .main-nav-bar {
     position: relative;
 
-    //font-size: 1em;
-
     .logo-tienda {
         width: auto;
         height: 2em;
@@ -18,12 +16,7 @@
         display: inline-block;
         border-radius: 6px;
 
-        //padding-left: .7em;
-        //padding-right: .7em;
-
         &.active {
-            //font-weight: vars.$font-weight-bold;
-
             color: var(--color-white);
             background: var(--color-black);
         }

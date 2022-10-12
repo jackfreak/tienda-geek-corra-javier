@@ -28,10 +28,6 @@ const firestoreDB = getFirestore(firebaseApp);
 // Initialize Firebase Authentication and get a reference to the service
 const firebaseAuth = getAuth(firebaseApp);
 
-// > To start the emulator run in a terminal: firebase emulators:start --only auth
-// > To view the Firebase Emulator Suite go to: localhost:4000/auth
-//connectAuthEmulator(auth, 'http://localhost:9099');
-
 export {
     firestoreDB,
     firebaseAuth,

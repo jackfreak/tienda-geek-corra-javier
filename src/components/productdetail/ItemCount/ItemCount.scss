@@ -1,5 +1,8 @@
+@use "/src/styles/variables/variables" as vars;
 @import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/variables";
+
 
 .item-count {
     position: relative;
